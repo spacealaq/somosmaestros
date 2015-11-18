@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_SOMOSMAESTROS_TITLE_LIST_VIEW_CREARAGENDA" option="View">
+        <message>
+                        <![CDATA[COM_SOMOSMAESTROS_TITLE_LIST_VIEW_CREARAGENDA_DESC]]>
+        </message>
+	</layout>
+</metadata>

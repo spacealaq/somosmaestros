@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_SOMOSMAESTROS_FORM_LBL_BLOG_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_SOMOSMAESTROS_FORM_LBL_BLOG_CREATED_BY"
+            description="COM_SOMOSMAESTROS_FORM_DESC_BLOG_CREATED_BY"  /> 
+
+       <field name="titulo" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_BLOG_TITULO"
+            description="COM_SOMOSMAESTROS_FORM_DESC_BLOG_TITULO" 
+                
+                
+                 required="true" 
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="contenido" type="textarea"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_BLOG_CONTENIDO"
+            description="COM_SOMOSMAESTROS_FORM_DESC_BLOG_CONTENIDO" 
+                
+                
+                 required="true" 
+            menu_published="0"
+            cols="100"
+            rows="8"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="imagen_grande" type="media"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_BLOG_IMAGEN_GRANDE"
+            description="COM_SOMOSMAESTROS_FORM_DESC_BLOG_IMAGEN_GRANDE" 
+                
+                
+                 required="true" 
+            menu_published="0"
+            filter="raw"
+            directory="/images/blog"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="imagen_pequena" type="media"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_BLOG_IMAGEN_PEQUENA"
+            description="COM_SOMOSMAESTROS_FORM_DESC_BLOG_IMAGEN_PEQUENA" 
+                
+                
+                 required="true" 
+            menu_published="0"
+            filter="raw"
+            directory="/images/blog"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+ <field name="categoria" type="foreignkey" class="inputbox"
+            label="COM_SOMOSMAESTROS_FORM_LBL_BLOG_CATEGORIA"
+            description="COM_SOMOSMAESTROS_FORM_DESC_BLOG_CATEGORIA" input_type="list" table="#__somosmaestros_categorias_blog" key_field="id" value_field="categoria"  required="true"  /> 
+
+       <field name="filter_categoria" type="sql" class="inputbox"
+            onchange="this.form.submit();" translate="true"
+            query="SELECT 0 AS `id`, 'COM_SOMOSMAESTROS_BLOGS_CATEGORIA_FILTER_DEFAULT_OPTION' AS `val` UNION SELECT `id`, `categoria` AS val FROM `#__somosmaestros_categorias_blog`" key_field="id" value_field="val"
+             /> 
+
+       <field name="destacado" type="text" size="40" class="inputbox"
+                                                    
+            label="COM_SOMOSMAESTROS_FORM_LBL_BLOG_DESTACADO"
+            description="COM_SOMOSMAESTROS_FORM_DESC_BLOG_DESTACADO" 
+                                                     default="0" 
+                                                     validate="boolean" 
+                                                     required="true" 
+                                                    filter="safehtml" /> 
+
+       <field name="publico" type="text" size="40" class="inputbox"
+                                                    
+            label="COM_SOMOSMAESTROS_FORM_LBL_BLOG_PUBLICO"
+            description="COM_SOMOSMAESTROS_FORM_DESC_BLOG_PUBLICO" 
+                                                    
+                                                     validate="boolean" 
+                                                     required="true" 
+                                                    filter="safehtml" /> 
+
+       <field name="delegacion" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_BLOG_DELEGACION"
+            description="COM_SOMOSMAESTROS_FORM_DESC_BLOG_DELEGACION" 
+                
+                
+                 required="true" 
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="tipo_institucion" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_BLOG_TIPO_INSTITUCION"
+            description="COM_SOMOSMAESTROS_FORM_DESC_BLOG_TIPO_INSTITUCION" 
+                
+                
+                 required="true"  /> 
+
+       <field name="segmento" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_BLOG_SEGMENTO"
+            description="COM_SOMOSMAESTROS_FORM_DESC_BLOG_SEGMENTO" 
+                
+                
+                 required="true" 
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="nivel" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_BLOG_NIVEL"
+            description="COM_SOMOSMAESTROS_FORM_DESC_BLOG_NIVEL" 
+                
+                
+                 required="true" 
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="ciudad" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_BLOG_CIUDAD"
+            description="COM_SOMOSMAESTROS_FORM_DESC_BLOG_CIUDAD" 
+                
+                
+                 required="true" 
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="area" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_BLOG_AREA"
+            description="COM_SOMOSMAESTROS_FORM_DESC_BLOG_AREA" 
+                
+                
+                 required="true" 
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="rol" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_BLOG_ROL"
+            description="COM_SOMOSMAESTROS_FORM_DESC_BLOG_ROL" 
+                
+                
+                 required="true" 
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="proyecto" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_BLOG_PROYECTO"
+            description="COM_SOMOSMAESTROS_FORM_DESC_BLOG_PROYECTO" 
+                
+                
+                 required="true" 
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="fuente" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_BLOG_FUENTE"
+            description="COM_SOMOSMAESTROS_FORM_DESC_BLOG_FUENTE" 
+                
+                
+                 /> 
+
+       <field name="preview" type="textarea"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_BLOG_PREVIEW"
+            description="COM_SOMOSMAESTROS_FORM_DESC_BLOG_PREVIEW" 
+                
+                
+                
+            option_on="Yes"
+            option_off="Yes" /> 
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+        <option value="2">JARCHIVED</option>
+        <option value="-2">JTRASHED</option>
+    </field> 
+
+                        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+
+	</fieldset>
+
+</form>

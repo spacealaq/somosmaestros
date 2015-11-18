@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_SOMOSMAESTROS_FORM_LBL_SMPERSONA_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_SOMOSMAESTROS_FORM_LBL_SMPERSONA_CREATED_BY"
+            description="COM_SOMOSMAESTROS_FORM_DESC_SMPERSONA_CREATED_BY"  /> 
+
+       <field name="nombre" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_SMPERSONA_NOMBRE"
+            description="COM_SOMOSMAESTROS_FORM_DESC_SMPERSONA_NOMBRE" 
+                
+                
+                 required="true"  /> 
+
+       <field name="usuario" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_SMPERSONA_USUARIO"
+            description="COM_SOMOSMAESTROS_FORM_DESC_SMPERSONA_USUARIO" 
+                
+                
+                 required="true"  /> 
+
+       <field name="perfil" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_SMPERSONA_PERFIL"
+            description="COM_SOMOSMAESTROS_FORM_DESC_SMPERSONA_PERFIL" 
+                
+                
+                 required="true"  /> 
+
+       <field name="password" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_SMPERSONA_PASSWORD"
+            description="COM_SOMOSMAESTROS_FORM_DESC_SMPERSONA_PASSWORD" 
+                
+                
+                 required="true" 
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="delegacion" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_SMPERSONA_DELEGACION"
+            description="COM_SOMOSMAESTROS_FORM_DESC_SMPERSONA_DELEGACION" 
+                
+                
+                 required="true"  /> 
+
+       <field name="ciudad" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_SMPERSONA_CIUDAD"
+            description="COM_SOMOSMAESTROS_FORM_DESC_SMPERSONA_CIUDAD" 
+                
+                
+                 required="true"  /> 
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+        <option value="2">JARCHIVED</option>
+        <option value="-2">JTRASHED</option>
+    </field> 
+
+                        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+
+	</fieldset>
+
+</form>

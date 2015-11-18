@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="module" client="site" method="upgrade">
+	<name>Giant Content</name>
+	<author>GiantTheme</author>
+	<creationDate>12 March 2014</creationDate>
+	<copyright>Copyright (C) 2014 GiantTheme. All rights reserved.</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>support@gianttheme.com</authorEmail>
+	<authorUrl>http://www.gianttheme.com</authorUrl>
+	<version>1.1.1</version>
+	<description>MOD_GIANTCONTENT_XML_DESCRIPTION</description>
+
+	<files>
+		<filename module="mod_giantcontent">mod_giantcontent.php</filename>
+		<filename>mod_giantcontent.xml</filename>
+		<filename>index.html</filename>
+		<folder>admin</folder>
+		<folder>assets</folder>
+		<folder>fields</folder>
+		<folder>tmpl</folder>
+	</files>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_giantcontent.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_giantcontent.sys.ini</language>
+	</languages>
+
+	<updateservers>
+		<server name="GiantTheme Update Directory" priority="1" type="collection">http://www.gianttheme.com/updates/list.xml</server>
+	</updateservers>
+
+	<config>
+	<fields name="params" addfieldpath="/modules/mod_giantcontent/fields">
+		<fieldset name="basic">		
+			<field type="caption" class="caption-primary" label="MOD_GIANTCONTENT_CAPTION_GENERAL" />
+			<field name="type" type="list" default="joomla" label="MOD_GIANTCONTENT_FIELD_TYPE" description="MOD_GIANTCONTENT_FIELD_TYPE_DESC">
+				<option value="k2">MOD_GIANTCONTENT_OPTION_TYPE_K2</option>
+				<option value="joomla">MOD_GIANTCONTENT_OPTION_TYPE_JOOMLA</option>
+				<option value="easyblog">MOD_GIANTCONTENT_OPTION_TYPE_EASYBLOG</option>
+			</field>
+			<field name="source" type="list" default="categories" label="MOD_GIANTCONTENT_FIELD_SOURCE" description="MOD_GIANTCONTENT_FIELD_SOURCE_DESC">
+				<option value="articles">MOD_GIANTCONTENT_OPTION_SOURCE_ARTICLES</option>
+				<option value="categories">MOD_GIANTCONTENT_OPTION_SOURCE_CATEGORIES</option>
+			</field>
+			<field name="articles" type="articles" multiple="true" default="" label="MOD_GIANTCONTENT_FIELD_ARTICLES" description="MOD_GIANTCONTENT_FIELD_ARTICLES_DESC" />
+			<field name="categories" type="category" multiple="true" extension="com_content" label="MOD_GIANTCONTENT_FIELD_CATEGORIES" description="MOD_GIANTCONTENT_FIELD_CATEGORIES_DESC" >
+				<option value="">JOPTION_ALL_CATEGORIES</option>
+			</field>
+			<!-- K2 -->
+			<field name="articles_k2" type="k2articles" multiple="true" default="" label="MOD_GIANTCONTENT_FIELD_ARTICLES" description="MOD_GIANTCONTENT_FIELD_ARTICLES_DESC" />
+			<field name="categories_k2" type="k2categories" multiple="true" label="MOD_GIANTCONTENT_FIELD_CATEGORIES" description="MOD_GIANTCONTENT_FIELD_CATEGORIES_DESC" >
+				<option value="">JOPTION_ALL_CATEGORIES</option>
+			</field>
+			<!-- EasyBlog -->
+			<field name="articles_eb" type="ebarticles" multiple="true" default="" label="MOD_GIANTCONTENT_FIELD_ARTICLES" description="" />
+			<field name="categories_eb" type="ebcategories" multiple="true" label="MOD_GIANTCONTENT_FIELD_CATEGORIES" description="" >
+				<option value="">JOPTION_ALL_CATEGORIES</option>
+			</field>
+			<field name="item_counts" type="text" default="5" label="MOD_GIANTCONTENT_FIELD_ITEM_COUNTS" description="MOD_GIANTCONTENT_FIELD_ITEM_COUNTS_DESC" />
+			<field name="skip_counts" type="text" default="" label="MOD_GIANTCONTENT_FIELD_SKIP_COUNTS" description="MOD_GIANTCONTENT_FIELD_SKIP_COUNTS_DESC" />
+			<field name="exclude" type="text" default="" label="MOD_GIANTCONTENT_FIELD_EXCLUDE" description="MOD_GIANTCONTENT_FIELD_EXCLUDE_DESC" />
+			<field name="readmore" type="text" default="" label="MOD_GIANTCONTENT_FIELD_READMORE" description="MOD_GIANTCONTENT_FIELD_READMORE_DESC" />
+			<field name="hide_module" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_HIDE_MODULE" description="MOD_GIANTCONTENT_FIELD_HIDE_MODULE_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+
+			<field type="caption" class="caption-primary" label="MOD_GIANTCONTENT_CAPTION_CONTENT_FILTER" />
+			<field name="tags" type="tag" multiple="true" label="MOD_GIANTCONTENT_FIELD_TAGS" description="MOD_GIANTCONTENT_FIELD_TAGS_DESC" />
+			<field name="tags_k2" type="k2tags" multiple="true" label="MOD_GIANTCONTENT_FIELD_TAGS" description="MOD_GIANTCONTENT_FIELD_TAGS_DESC" />
+			<field name="tags_eb" type="ebtags" multiple="true" label="MOD_GIANTCONTENT_FIELD_TAGS" description="MOD_GIANTCONTENT_FIELD_TAGS_DESC" />
+			<field name="author" type="users" multiple="true" label="MOD_GIANTCONTENT_FIELD_AUTHOR" description="MOD_GIANTCONTENT_FIELD_AUTHOR_DESC" />
+			<field name="ordering" type="list" default="created_newest" label="MOD_GIANTCONTENT_FIELD_ORDERING" description="MOD_GIANTCONTENT_FIELD_ORDERING_DESC">
+				<option value="random">MOD_GIANTCONTENT_OPTION_ORDERING_RANDOM</option>
+				<option value="most_rated">MOD_GIANTCONTENT_OPTION_ORDERING_MOST_RATED</option>
+				<option value="least_rated">MOD_GIANTCONTENT_OPTION_ORDERING_LEAST_RATED</option>
+				<option value="popular_last">MOD_GIANTCONTENT_OPTION_ORDERING_POPULAR_LAST</option>
+				<option value="popular_first">MOD_GIANTCONTENT_OPTION_ORDERING_POPULAR_FIRST</option>
+				<option value="id_asc">MOD_GIANTCONTENT_OPTION_ORDERING_ID_ASC</option>
+				<option value="id_desc">MOD_GIANTCONTENT_OPTION_ORDERING_ID_DESC</option>
+				<option value="title_asc">MOD_GIANTCONTENT_OPTION_ORDERING_TITLE_ASC</option>
+				<option value="title_desc">MOD_GIANTCONTENT_OPTION_ORDERING_TITLE_DESC</option>
+				<option value="created_oldest">MOD_GIANTCONTENT_OPTION_ORDERING_CREATED_OLDEST</option>
+				<option value="created_newest">MOD_GIANTCONTENT_OPTION_ORDERING_CREATED_NEWEST</option>
+				<option value="most_commented">MOD_GIANTCONTENT_OPTION_ORDERING_MOST_COMMENTED</option>
+				<option value="latest_commented">MOD_GIANTCONTENT_OPTION_ORDERING_LATEST_COMMENTED</option>
+			</field>
+			<field name="featured" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_FEATURED" description="MOD_GIANTCONTENT_FIELD_FEATURED_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+
+			<field type="caption" class="caption-primary" label="MOD_GIANTCONTENT_CAPTION_CONTENT_DISPLAY" description="MOD_GIANTCONTENT_CAPTION_CONTENT_DISPLAY_DESC" />
+			<field name="show_title" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_SHOW_TITLE" description="MOD_GIANTCONTENT_FIELD_SHOW_TITLE_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="show_intro" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_SHOW_INTRO" description="MOD_GIANTCONTENT_FIELD_SHOW_INTRO_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="show_image" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_SHOW_IMAGE" description="MOD_GIANTCONTENT_FIELD_SHOW_IMAGE_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="show_author" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_SHOW_AUTHOR" description="MOD_GIANTCONTENT_FIELD_SHOW_AUTHOR_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="show_hits" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_SHOW_HITS" description="MOD_GIANTCONTENT_FIELD_SHOW_HITS_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="show_date" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_SHOW_DATE" description="MOD_GIANTCONTENT_FIELD_SHOW_DATE_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="show_tags" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_SHOW_TAGS" description="MOD_GIANTCONTENT_FIELD_SHOW_TAGS_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="show_rating" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_SHOW_RATING" description="MOD_GIANTCONTENT_FIELD_SHOW_RATING_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="show_category" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_SHOW_CATEGORY" description="MOD_GIANTCONTENT_FIELD_SHOW_CATEGORY_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+
+			<field type="caption" class="caption-primary" label="MOD_GIANTCONTENT_CAPTION_CONTENT_FEATURED" description="MOD_GIANTCONTENT_CAPTION_CONTENT_FEATURED_DESC" />
+			<field name="featured_label" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_FEATURED_LABEL" description="MOD_GIANTCONTENT_FIELD_FEATURED_LABEL_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			
+			<field name="featured_label_text" type="text" default="Featured" label="MOD_GIANTCONTENT_FIELD_FEATURED_LABEL_TEXT" description="MOD_GIANTCONTENT_FIELD_FEATURED_LABEL_TEXT_DESC" />
+			<field name="featured_label_color" type="color" default="#e52626" label="MOD_GIANTCONTENT_FIELD_FEATURED_LABEL_COLOR" description="MOD_GIANTCONTENT_FIELD_FEATURED_LABEL_COLOR_DESC" />
+		</fieldset>
+
+		<!-- LAYOUT FIELDSET -->
+		<fieldset name="layout" label="MOD_GIANTCONTENT_FIELDSET_LAYOUT">
+			<field type="caption" class="caption-primary" label="MOD_GIANTCONTENT_CAPTION_LAYOUT" />
+			<field name="layout" type="modulelayout" label="MOD_GIANTCONTENT_FIELD_LAYOUT" description="MOD_GIANTCONTENT_FIELD_LAYOUT_DESC" />
+			<field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+			<!-- TAB LAYOUT -->
+			<field name="tab_layout" type="caption" class="caption-secondary" label="MOD_GIANTCONTENT_CAPTION_TAB_LAYOUT" />
+			<field name="tab_autoplay" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_TAB_AUTOPLAY" description="MOD_GIANTCONTENT_FIELD_TAB_AUTOPLAY_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="tab_direction" type="radio" default="horizontal" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_TAB_DIRECTION" description="MOD_GIANTCONTENT_FIELD_TAB_DIRECTION_DESC">
+				<option value="vertical">MOD_GIANTCONTENT_OPTION_TAB_DIRECTION_VERTICAL</option>
+				<option value="horizontal">MOD_GIANTCONTENT_OPTION_TAB_DIRECTION_HORIZONTAL</option>
+			</field>
+			<field name="tab_interval" type="text" default="5000" label="MOD_GIANTCONTENT_FIELD_TAB_INTERVAL" description="MOD_GIANTCONTENT_FIELD_TAB_INTERVAL_DESC" />
+			<field name="tab_duration" type="text" default="500" label="MOD_GIANTCONTENT_FIELD_TAB_DURATION" description="MOD_GIANTCONTENT_FIELD_TAB_DURATION_DESC" />
+			<field name="tab_animation" type="list" default="swing" label="MOD_GIANTCONTENT_FIELD_TAB_ANIMATION" description="MOD_GIANTCONTENT_FIELD_TAB_ANIMATION_DESC">
+				<option value="swing">swing</option>
+				<option value="easeInQuad">easeInQuad</option>
+				<option value="easeOutQuad">easeOutQuad</option>
+				<option value="easeInOutQuad">easeInOutQuad</option>
+				<option value="easeInCubic">easeInCubic</option>
+				<option value="easeOutCubic">easeOutCubic</option>
+				<option value="easeInOutCubic">easeInOutCubic</option>
+				<option value="easeInQuart">easeInQuart</option>
+				<option value="easeOutQuart">easeOutQuart</option>
+				<option value="easeInOutQuart">easeInOutQuart</option>
+				<option value="easeInQuint">easeInQuint</option>
+				<option value="easeOutQuint">easeOutQuint</option>
+				<option value="easeInOutQuint">easeInOutQuint</option>
+				<option value="easeInSine">easeInSine</option>
+				<option value="easeOutSine">easeOutSine</option>
+				<option value="easeInOutSine">easeInOutSine</option>
+				<option value="easeInExpo">easeInExpo</option>
+				<option value="easeOutExpo">easeOutExpo</option>
+				<option value="easeInOutExpo">easeInOutExpo</option>
+				<option value="easeInCirc">easeInCirc</option>
+				<option value="easeOutCirc">easeOutCirc</option>
+				<option value="easeInOutCirc">easeInOutCirc</option>
+				<option value="easeInElastic">easeInElastic</option>
+				<option value="easeOutElastic">easeOutElastic</option>
+				<option value="easeInOutElastic">easeInOutElastic</option>
+				<option value="easeInBack">easeInBack</option>
+				<option value="easeOutBack">easeOutBack</option>
+				<option value="easeInOutBack">easeInOutBack</option>
+				<option value="easeInBounce">easeInBounce</option>
+				<option value="easeOutBounce">easeOutBounce</option>
+				<option value="easeInOutBounce">easeInOutBounce</option>
+			</field>
+			<!-- LIST LAYOUT -->
+			<field name="list_layout" type="caption" class="caption-secondary" label="MOD_GIANTCONTENT_CAPTION_LIST_LAYOUT" />
+			<field name="list_duration" type="text" default="500" label="MOD_GIANTCONTENT_FIELD_LIST_DURATION" description="MOD_GIANTCONTENT_FIELD_LIST_DURATION_DESC" />
+			<field name="list_animation" type="list" default="swing" label="MOD_GIANTCONTENT_FIELD_LIST_ANIMATION" description="MOD_GIANTCONTENT_FIELD_LIST_ANIMATION_DESC">
+				<option value="swing">swing</option>
+				<option value="easeInQuad">easeInQuad</option>
+				<option value="easeOutQuad">easeOutQuad</option>
+				<option value="easeInOutQuad">easeInOutQuad</option>
+				<option value="easeInCubic">easeInCubic</option>
+				<option value="easeOutCubic">easeOutCubic</option>
+				<option value="easeInOutCubic">easeInOutCubic</option>
+				<option value="easeInQuart">easeInQuart</option>
+				<option value="easeOutQuart">easeOutQuart</option>
+				<option value="easeInOutQuart">easeInOutQuart</option>
+				<option value="easeInQuint">easeInQuint</option>
+				<option value="easeOutQuint">easeOutQuint</option>
+				<option value="easeInOutQuint">easeInOutQuint</option>
+				<option value="easeInSine">easeInSine</option>
+				<option value="easeOutSine">easeOutSine</option>
+				<option value="easeInOutSine">easeInOutSine</option>
+				<option value="easeInExpo">easeInExpo</option>
+				<option value="easeOutExpo">easeOutExpo</option>
+				<option value="easeInOutExpo">easeInOutExpo</option>
+				<option value="easeInCirc">easeInCirc</option>
+				<option value="easeOutCirc">easeOutCirc</option>
+				<option value="easeInOutCirc">easeInOutCirc</option>
+				<option value="easeInElastic">easeInElastic</option>
+				<option value="easeOutElastic">easeOutElastic</option>
+				<option value="easeInOutElastic">easeInOutElastic</option>
+				<option value="easeInBack">easeInBack</option>
+				<option value="easeOutBack">easeOutBack</option>
+				<option value="easeInOutBack">easeInOutBack</option>
+				<option value="easeInBounce">easeInBounce</option>
+				<option value="easeOutBounce">easeOutBounce</option>
+				<option value="easeInOutBounce">easeInOutBounce</option>
+			</field>
+			<!-- BLOG LAYOUT -->
+			<field name="blog_layout" type="caption" class="caption-secondary" label="MOD_GIANTCONTENT_CAPTION_BLOG_LAYOUT" />
+			<field name="blog_pager" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_BLOG_PAGER" description="MOD_GIANTCONTENT_FIELD_BLOG_PAGER_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="blog_items" type="text" default="3" label="MOD_GIANTCONTENT_FIELD_BLOG_ITEMS" description="MOD_GIANTCONTENT_FIELD_BLOG_ITEMS_DESC" />
+			<field name="blog_pager_align" type="list" default="center" label="MOD_GIANTCONTENT_FIELD_BLOG_PAGER_ALIGN" description="MOD_GIANTCONTENT_FIELD_BLOG_PAGER_ALIGN_DESC">
+				<option value="left">MOD_GIANTCONTENT_OPTION_BLOG_PAGER_ALIGN_LEFT</option>
+				<option value="right">MOD_GIANTCONTENT_OPTION_BLOG_PAGER_ALIGN_RIGHT</option>
+				<option value="center">MOD_GIANTCONTENT_OPTION_BLOG_PAGER_ALIGN_CENTER</option>
+			</field>
+			<field name="blog_pager_position" type="list" default="bottom" label="MOD_GIANTCONTENT_FIELD_BLOG_PAGER_POSITION" description="MOD_GIANTCONTENT_FIELD_BLOG_PAGER_POSITION_DESC">
+				<option value="top">MOD_GIANTCONTENT_OPTION_BLOG_PAGER_POSITION_TOP</option>
+				<option value="bottom">MOD_GIANTCONTENT_OPTION_BLOG_PAGER_POSITION_BOTTOM</option>
+			</field>
+			<!-- GRID LAYOUT -->
+			<field name="grid_layout" type="caption" class="caption-secondary" label="MOD_GIANTCONTENT_CAPTION_GRID_LAYOUT" />
+			<field name="grid_columns" type="list" default="3" label="MOD_GIANTCONTENT_FIELD_GRID_COLUMNS" description="MOD_GIANTCONTENT_FIELD_GRID_COLUMNS_DESC">
+				<option value="2">MOD_GIANTCONTENT_OPTION_GRID_2COLUMNS</option>
+				<option value="3">MOD_GIANTCONTENT_OPTION_GRID_3COLUMNS</option>
+				<option value="4">MOD_GIANTCONTENT_OPTION_GRID_4COLUMNS</option>
+				<option value="5">MOD_GIANTCONTENT_OPTION_GRID_5COLUMNS</option>
+				<option value="6">MOD_GIANTCONTENT_OPTION_GRID_6COLUMNS</option>
+			</field>
+			<field name="grid_show_sort" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_GRID_SHOW_SORT" description="MOD_GIANTCONTENT_FIELD_GRID_SHOW_SORT_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="grid_show_filter" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_GRID_SHOW_FILTER" description="MOD_GIANTCONTENT_FIELD_GRID_SHOW_FILTER_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="grid_filter_alias1" type="text" default="" label="MOD_GIANTCONTENT_FIELD_GRID_FILTER_ALIAS1" description="MOD_GIANTCONTENT_FIELD_GRID_FILTER_ALIAS_DESC" />
+			<field name="grid_filter_alias2" type="text" default="" label="MOD_GIANTCONTENT_FIELD_GRID_FILTER_ALIAS2" description="MOD_GIANTCONTENT_FIELD_GRID_FILTER_ALIAS_DESC" />
+			<field name="grid_filter_alias3" type="text" default="" label="MOD_GIANTCONTENT_FIELD_GRID_FILTER_ALIAS3" description="MOD_GIANTCONTENT_FIELD_GRID_FILTER_ALIAS_DESC" />
+			<field name="grid_filter_alias4" type="text" default="" label="MOD_GIANTCONTENT_FIELD_GRID_FILTER_ALIAS4" description="MOD_GIANTCONTENT_FIELD_GRID_FILTER_ALIAS_DESC" />
+			<field name="grid_filter_alias5" type="text" default="" label="MOD_GIANTCONTENT_FIELD_GRID_FILTER_ALIAS5" description="MOD_GIANTCONTENT_FIELD_GRID_FILTER_ALIAS_DESC" />
+			<field name="grid_filter_name1" type="text" default="" label="MOD_GIANTCONTENT_FIELD_GRID_FILTER_NAME1" description="MOD_GIANTCONTENT_FIELD_GRID_FILTER_NAME_DESC" />
+			<field name="grid_filter_name2" type="text" default="" label="MOD_GIANTCONTENT_FIELD_GRID_FILTER_NAME2" description="MOD_GIANTCONTENT_FIELD_GRID_FILTER_NAME_DESC" />
+			<field name="grid_filter_name3" type="text" default="" label="MOD_GIANTCONTENT_FIELD_GRID_FILTER_NAME3" description="MOD_GIANTCONTENT_FIELD_GRID_FILTER_NAME_DESC" />
+			<field name="grid_filter_name4" type="text" default="" label="MOD_GIANTCONTENT_FIELD_GRID_FILTER_NAME4" description="MOD_GIANTCONTENT_FIELD_GRID_FILTER_NAME_DESC" />
+			<field name="grid_filter_name5" type="text" default="" label="MOD_GIANTCONTENT_FIELD_GRID_FILTER_NAME5" description="MOD_GIANTCONTENT_FIELD_GRID_FILTER_NAME_DESC" />
+			<!-- MOSAIC LAYOUT -->
+			<field name="mosaic_layout" type="caption" class="caption-secondary" label="MOD_GIANTCONTENT_CAPTION_MOSAIC_LAYOUT" />
+			<field name="mosaic_width" type="text" default="200" label="MOD_GIANTCONTENT_FIELD_MOSAIC_WIDTH" description="MOD_GIANTCONTENT_FIELD_MOSAIC_WIDTH_DESC" />
+			<field name="mosaic_gutterx" type="text" default="20" label="MOD_GIANTCONTENT_FIELD_MOSAIC_GUTTERX" description="MOD_GIANTCONTENT_FIELD_MOSAIC_GUTTERX_DESC" />
+			<field name="mosaic_guttery" type="text" default="20" label="MOD_GIANTCONTENT_FIELD_MOSAIC_GUTTERY" description="MOD_GIANTCONTENT_FIELD_MOSAIC_GUTTERY_DESC" />
+			<field name="mosaic_animate" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_MOSAIC_ANIMATE" description="MOD_GIANTCONTENT_FIELD_MOSAIC_ANIMATE_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<!-- ROLLER LAYOUT -->
+			<field name="roller_layout" type="caption" class="caption-secondary" label="MOD_GIANTCONTENT_CAPTION_ROLLER_LAYOUT" />
+			<field name="roller_autoplay" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_ROLLER_AUTOPLAY" description="MOD_GIANTCONTENT_FIELD_ROLLER_AUTOPLAY_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="roller_navigation" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_ROLLER_NAVIGATION" description="MOD_GIANTCONTENT_FIELD_ROLLER_NAVIGATION_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="roller_pagination" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_ROLLER_PAGINATION" description="MOD_GIANTCONTENT_FIELD_ROLLER_PAGINATION_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="roller_interval" type="text" default="5000" label="MOD_GIANTCONTENT_FIELD_ROLLER_INTERVAL" description="MOD_GIANTCONTENT_FIELD_ROLLER_INTERVAL_DESC" />
+			<field name="roller_duration" type="text" default="1000" label="MOD_GIANTCONTENT_FIELD_ROLLER_DURATION" description="MOD_GIANTCONTENT_FIELD_ROLLER_DURATION_DESC" />
+			<field name="roller_animation" type="list" default="swing" label="MOD_GIANTCONTENT_FIELD_ROLLER_ANIMATION" description="MOD_GIANTCONTENT_FIELD_ROLLER_ANIMATION_DESC">
+				<option value="swing">swing</option>
+				<option value="easeInQuad">easeInQuad</option>
+				<option value="easeOutQuad">easeOutQuad</option>
+				<option value="easeInOutQuad">easeInOutQuad</option>
+				<option value="easeInCubic">easeInCubic</option>
+				<option value="easeOutCubic">easeOutCubic</option>
+				<option value="easeInOutCubic">easeInOutCubic</option>
+				<option value="easeInQuart">easeInQuart</option>
+				<option value="easeOutQuart">easeOutQuart</option>
+				<option value="easeInOutQuart">easeInOutQuart</option>
+				<option value="easeInQuint">easeInQuint</option>
+				<option value="easeOutQuint">easeOutQuint</option>
+				<option value="easeInOutQuint">easeInOutQuint</option>
+				<option value="easeInSine">easeInSine</option>
+				<option value="easeOutSine">easeOutSine</option>
+				<option value="easeInOutSine">easeInOutSine</option>
+				<option value="easeInExpo">easeInExpo</option>
+				<option value="easeOutExpo">easeOutExpo</option>
+				<option value="easeInOutExpo">easeInOutExpo</option>
+				<option value="easeInCirc">easeInCirc</option>
+				<option value="easeOutCirc">easeOutCirc</option>
+				<option value="easeInOutCirc">easeInOutCirc</option>
+				<option value="easeInElastic">easeInElastic</option>
+				<option value="easeOutElastic">easeOutElastic</option>
+				<option value="easeInOutElastic">easeInOutElastic</option>
+				<option value="easeInBack">easeInBack</option>
+				<option value="easeOutBack">easeOutBack</option>
+				<option value="easeInOutBack">easeInOutBack</option>
+				<option value="easeInBounce">easeInBounce</option>
+				<option value="easeOutBounce">easeOutBounce</option>
+				<option value="easeInOutBounce">easeInOutBounce</option>
+			</field>
+			<!-- CAROUSEL LAYOUT -->
+			<field name="carousel_layout" type="caption" class="caption-secondary" label="MOD_GIANTCONTENT_CAPTION_CAROUSEL_LAYOUT" />
+			<field name="carousel_items" type="text" default="4" label="MOD_GIANTCONTENT_FIELD_CAROUSEL_ITEMS" description="MOD_GIANTCONTENT_FIELD_CAROUSEL_ITEMS_DESC" />
+			<field name="carousel_autoplay" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_CAROUSEL_AUTOPLAY" description="MOD_GIANTCONTENT_FIELD_CAROUSEL_AUTOPLAY_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="carousel_navigation" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_CAROUSEL_NAVIGATION" description="MOD_GIANTCONTENT_FIELD_CAROUSEL_NAVIGATION_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="carousel_pagination" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_CAROUSEL_PAGINATION" description="MOD_GIANTCONTENT_FIELD_CAROUSEL_PAGINATION_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="carousel_singleitem" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_CAROUSEL_SINGLEITEM" description="MOD_GIANTCONTENT_FIELD_CAROUSEL_SINGLEITEM_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="carousel_scrollperpage" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_CAROUSEL_SCROLLPERPAGE" description="MOD_GIANTCONTENT_FIELD_CAROUSEL_SCROLLPERPAGE_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="carousel_interval" type="text" default="5000" label="MOD_GIANTCONTENT_FIELD_CAROUSEL_INTERVAL" description="MOD_GIANTCONTENT_FIELD_CAROUSEL_INTERVAL_DESC" />
+			<field name="carousel_duration" type="text" default="500" label="MOD_GIANTCONTENT_FIELD_CAROUSEL_DURATION" description="MOD_GIANTCONTENT_FIELD_CAROUSEL_DURATION_DESC" />
+			<field name="carousel_animation" type="list" default="swing" label="MOD_GIANTCONTENT_FIELD_CAROUSEL_ANIMATION" description="MOD_GIANTCONTENT_FIELD_CAROUSEL_ANIMATION_DESC">
+				<option value="swing">swing</option>
+				<option value="easeInQuad">easeInQuad</option>
+				<option value="easeOutQuad">easeOutQuad</option>
+				<option value="easeInOutQuad">easeInOutQuad</option>
+				<option value="easeInCubic">easeInCubic</option>
+				<option value="easeOutCubic">easeOutCubic</option>
+				<option value="easeInOutCubic">easeInOutCubic</option>
+				<option value="easeInQuart">easeInQuart</option>
+				<option value="easeOutQuart">easeOutQuart</option>
+				<option value="easeInOutQuart">easeInOutQuart</option>
+				<option value="easeInQuint">easeInQuint</option>
+				<option value="easeOutQuint">easeOutQuint</option>
+				<option value="easeInOutQuint">easeInOutQuint</option>
+				<option value="easeInSine">easeInSine</option>
+				<option value="easeOutSine">easeOutSine</option>
+				<option value="easeInOutSine">easeInOutSine</option>
+				<option value="easeInExpo">easeInExpo</option>
+				<option value="easeOutExpo">easeOutExpo</option>
+				<option value="easeInOutExpo">easeInOutExpo</option>
+				<option value="easeInCirc">easeInCirc</option>
+				<option value="easeOutCirc">easeOutCirc</option>
+				<option value="easeInOutCirc">easeInOutCirc</option>
+				<option value="easeInElastic">easeInElastic</option>
+				<option value="easeOutElastic">easeOutElastic</option>
+				<option value="easeInOutElastic">easeInOutElastic</option>
+				<option value="easeInBack">easeInBack</option>
+				<option value="easeOutBack">easeOutBack</option>
+				<option value="easeInOutBack">easeInOutBack</option>
+				<option value="easeInBounce">easeInBounce</option>
+				<option value="easeOutBounce">easeOutBounce</option>
+				<option value="easeInOutBounce">easeInOutBounce</option>
+			</field>
+			<!-- ACCORDION LAYOUT -->
+			<field name="accordion_layout" type="caption" class="caption-secondary" label="MOD_GIANTCONTENT_CAPTION_ACCORDION_LAYOUT" />
+			<field name="accordion_autoplay" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_ACCORDION_AUTOPLAY" description="MOD_GIANTCONTENT_FIELD_ACCORDION_AUTOPLAY_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="accordion_direction" type="radio" default="horizontal" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_ACCORDION_DIRECTION" description="MOD_GIANTCONTENT_FIELD_ACCORDION_DIRECTION_DESC">
+				<option value="vertical">MOD_GIANTCONTENT_OPTION_ACCORDION_DIRECTION_VERTICAL</option>
+				<option value="horizontal">MOD_GIANTCONTENT_OPTION_ACCORDION_DIRECTION_HORIZONTAL</option>
+			</field>
+			<field name="accordion_width" type="text" default="auto" label="MOD_GIANTCONTENT_FIELD_ACCORDION_WIDTH" description="MOD_GIANTCONTENT_FIELD_ACCORDION_WIDTH_DESC" />
+			<field name="accordion_height" type="text" default="auto" label="MOD_GIANTCONTENT_FIELD_ACCORDION_HEIGHT" description="MOD_GIANTCONTENT_FIELD_ACCORDION_HEIGHT_DESC" />
+			<field name="accordion_interval" type="text" default="5000" label="MOD_GIANTCONTENT_FIELD_ACCORDION_INTERVAL" description="MOD_GIANTCONTENT_FIELD_ACCORDION_INTERVAL_DESC" />
+			<field name="accordion_duration" type="text" default="500" label="MOD_GIANTCONTENT_FIELD_ACCORDION_DURATION" description="MOD_GIANTCONTENT_FIELD_ACCORDION_DURATION_DESC" />
+			<field name="accordion_animation" type="list" default="swing" label="MOD_GIANTCONTENT_FIELD_ACCORDION_ANIMATION" description="MOD_GIANTCONTENT_FIELD_ACCORDION_ANIMATION_DESC">
+				<option value="swing">swing</option>
+				<option value="easeInQuad">easeInQuad</option>
+				<option value="easeOutQuad">easeOutQuad</option>
+				<option value="easeInOutQuad">easeInOutQuad</option>
+				<option value="easeInCubic">easeInCubic</option>
+				<option value="easeOutCubic">easeOutCubic</option>
+				<option value="easeInOutCubic">easeInOutCubic</option>
+				<option value="easeInQuart">easeInQuart</option>
+				<option value="easeOutQuart">easeOutQuart</option>
+				<option value="easeInOutQuart">easeInOutQuart</option>
+				<option value="easeInQuint">easeInQuint</option>
+				<option value="easeOutQuint">easeOutQuint</option>
+				<option value="easeInOutQuint">easeInOutQuint</option>
+				<option value="easeInSine">easeInSine</option>
+				<option value="easeOutSine">easeOutSine</option>
+				<option value="easeInOutSine">easeInOutSine</option>
+				<option value="easeInExpo">easeInExpo</option>
+				<option value="easeOutExpo">easeOutExpo</option>
+				<option value="easeInOutExpo">easeInOutExpo</option>
+				<option value="easeInCirc">easeInCirc</option>
+				<option value="easeOutCirc">easeOutCirc</option>
+				<option value="easeInOutCirc">easeInOutCirc</option>
+				<option value="easeInElastic">easeInElastic</option>
+				<option value="easeOutElastic">easeOutElastic</option>
+				<option value="easeInOutElastic">easeInOutElastic</option>
+				<option value="easeInBack">easeInBack</option>
+				<option value="easeOutBack">easeOutBack</option>
+				<option value="easeInOutBack">easeInOutBack</option>
+				<option value="easeInBounce">easeInBounce</option>
+				<option value="easeOutBounce">easeOutBounce</option>
+				<option value="easeInOutBounce">easeInOutBounce</option>
+			</field>
+			<field name="accordion_startslide" type="text" default="1" label="MOD_GIANTCONTENT_FIELD_ACCORDION_STARTSLIDE" description="MOD_GIANTCONTENT_FIELD_ACCORDION_STARTSLIDE_DESC" />
+			<!-- SLIDESHOW LAYOUT -->
+			<field name="slideshow_layout" type="caption" class="caption-secondary" label="MOD_GIANTCONTENT_CAPTION_SLIDESHOW_LAYOUT" />
+			<field name="slideshow_autoplay" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_SLIDESHOW_AUTOPLAY" description="MOD_GIANTCONTENT_FIELD_SLIDESHOW_AUTOPLAY_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="slideshow_navigation" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_SLIDESHOW_NAVIGATION" description="MOD_GIANTCONTENT_FIELD_SLIDESHOW_NAVIGATION_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="slideshow_pagination" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_SLIDESHOW_PAGINATION" description="MOD_GIANTCONTENT_FIELD_SLIDESHOW_PAGINATION_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="slideshow_thumbnails" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_SLIDESHOW_THUMBNAILS" description="MOD_GIANTCONTENT_FIELD_SLIDESHOW_THUMBNAILS_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="slideshow_width" type="text" default="" label="MOD_GIANTCONTENT_FIELD_SLIDESHOW_WIDTH" description="MOD_GIANTCONTENT_FIELD_SLIDESHOW_WIDTH_DESC" />
+			<field name="slideshow_height" type="text" default="" label="MOD_GIANTCONTENT_FIELD_SLIDESHOW_HEIGHT" description="MOD_GIANTCONTENT_FIELD_SLIDESHOW_HEIGHT_DESC" />
+			<field name="slideshow_interval" type="text" default="5000" label="MOD_GIANTCONTENT_FIELD_SLIDESHOW_INTERVAL" description="MOD_GIANTCONTENT_FIELD_SLIDESHOW_INTERVAL_DESC" />
+			<field name="slideshow_duration" type="text" default="1000" label="MOD_GIANTCONTENT_FIELD_SLIDESHOW_DURATION" description="MOD_GIANTCONTENT_FIELD_SLIDESHOW_DURATION_DESC" />
+			<field name="slideshow_animation" type="list" default="fade" label="MOD_GIANTCONTENT_FIELD_SLIDESHOW_ANIMATION" description="MOD_GIANTCONTENT_FIELD_SLIDESHOW_ANIMATION_DESC">
+				<option value="fade">fade</option>
+				<option value="block">block</option>
+				<option value="blindH">blindH</option>
+				<option value="blindV">blindV</option>
+				<option value="sliceH">sliceH</option>
+				<option value="sliceV">sliceV</option>
+				<option value="slideH">slideH</option>
+				<option value="slideV">slideV</option>
+				<option value="random">random</option>
+				<option value="zoomIn">zoomIn</option>
+				<option value="zoomOut">zoomOut</option>
+			</field>
+			<field name="slideshow_startslide" type="text" default="0" label="MOD_GIANTCONTENT_FIELD_SLIDESHOW_STARTSLIDE" description="MOD_GIANTCONTENT_FIELD_SLIDESHOW_STARTSLIDE_DESC" />
+			<!-- NEWSTICKER LAYOUT -->
+			<field name="newsticker_layout" type="caption" class="caption-secondary" label="MOD_GIANTCONTENT_CAPTION_NEWSTICKER_LAYOUT" />
+			<field name="newsticker_control" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_NEWSTICKER_CONTROLS" description="MOD_GIANTCONTENT_FIELD_NEWSTICKER_CONTROLS_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+			</field>
+			<field name="newsticker_direction" type="radio" default="down" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_NEWSTICKER_DIRECTION" description="MOD_GIANTCONTENT_FIELD_NEWSTICKER_DIRECTION_DESC">
+				<option value="up">MOD_GIANTCONTENT_OPTION_NEWSTICKER_DIRECTION_UP</option>
+				<option value="down">MOD_GIANTCONTENT_OPTION_NEWSTICKER_DIRECTION_DOWN</option>
+			</field>
+			<field name="newsticker_visible" type="text" default="3" label="MOD_GIANTCONTENT_FIELD_NEWSTICKER_VISIBLE" description="MOD_GIANTCONTENT_FIELD_NEWSTICKER_VISIBLE_DESC" />
+			<field name="newsticker_interval" type="text" default="5000" label="MOD_GIANTCONTENT_FIELD_NEWSTICKER_INTERVAL" description="MOD_GIANTCONTENT_FIELD_NEWSTICKER_INTERVAL_DESC" />
+			<field name="newsticker_duration" type="text" default="500" label="MOD_GIANTCONTENT_FIELD_NEWSTICKER_DURATION" description="MOD_GIANTCONTENT_FIELD_NEWSTICKER_DURATION_DESC" />
+			<field name="newsticker_animation" type="list" default="swing" label="MOD_GIANTCONTENT_FIELD_NEWSTICKER_ANIMATION" description="MOD_GIANTCONTENT_FIELD_NEWSTICKER_ANIMATION_DESC">
+				<option value="swing">swing</option>
+				<option value="easeInQuad">easeInQuad</option>
+				<option value="easeOutQuad">easeOutQuad</option>
+				<option value="easeInOutQuad">easeInOutQuad</option>
+				<option value="easeInCubic">easeInCubic</option>
+				<option value="easeOutCubic">easeOutCubic</option>
+				<option value="easeInOutCubic">easeInOutCubic</option>
+				<option value="easeInQuart">easeInQuart</option>
+				<option value="easeOutQuart">easeOutQuart</option>
+				<option value="easeInOutQuart">easeInOutQuart</option>
+				<option value="easeInQuint">easeInQuint</option>
+				<option value="easeOutQuint">easeOutQuint</option>
+				<option value="easeInOutQuint">easeInOutQuint</option>
+				<option value="easeInSine">easeInSine</option>
+				<option value="easeOutSine">easeOutSine</option>
+				<option value="easeInOutSine">easeInOutSine</option>
+				<option value="easeInExpo">easeInExpo</option>
+				<option value="easeOutExpo">easeOutExpo</option>
+				<option value="easeInOutExpo">easeInOutExpo</option>
+				<option value="easeInCirc">easeInCirc</option>
+				<option value="easeOutCirc">easeOutCirc</option>
+				<option value="easeInOutCirc">easeInOutCirc</option>
+				<option value="easeInElastic">easeInElastic</option>
+				<option value="easeOutElastic">easeOutElastic</option>
+				<option value="easeInOutElastic">easeInOutElastic</option>
+				<option value="easeInBack">easeInBack</option>
+				<option value="easeOutBack">easeOutBack</option>
+				<option value="easeInOutBack">easeInOutBack</option>
+				<option value="easeInBounce">easeInBounce</option>
+				<option value="easeOutBounce">easeOutBounce</option>
+				<option value="easeInOutBounce">easeInOutBounce</option>
+			</field>
+		</fieldset>
+
+		<!-- ADVANCED FIELDSET -->
+		<fieldset name="advanced" label="MOD_GIANTCONTENT_FIELDSET_ADVANCED">
+			<field type="caption" class="caption-primary" label="MOD_GIANTCONTENT_CAPTION_INTRO_TEXT" />
+			<field name="limit_intro" type="text" default="200" label="MOD_GIANTCONTENT_FIELD_LIMIT_INTRO" description="MOD_GIANTCONTENT_FIELD_LIMIT_INTRO_DESC" />
+			<field name="clean_intro" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_CLEAN_INTRO" description="MOD_GIANTCONTENT_FIELD_CLEAN_INTRO_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="allowed_tags" type="textarea" rows="3" default="" label="MOD_GIANTCONTENT_FIELD_ALLOWED_TAGS" description="MOD_GIANTCONTENT_FIELD_ALLOWED_TAGS_DESC" />
+
+			<field type="caption" class="caption-primary" label="MOD_GIANTCONTENT_CAPTION_CUSTOM_TEXT" />
+			<field name="custom_top_text" type="text" default="" label="MOD_GIANTCONTENT_FIELD_CUSTOM_TOP_TEXT" description="MOD_GIANTCONTENT_FIELD_CUSTOM_TOP_TEXT_DESC" />
+			<field name="custom_top_link" type="text" default="" label="MOD_GIANTCONTENT_FIELD_CUSTOM_TOP_LINK" description="MOD_GIANTCONTENT_FIELD_CUSTOM_TOP_LINK_DESC" />
+			<field name="custom_bottom_text" type="text" default="" label="MOD_GIANTCONTENT_FIELD_CUSTOM_BOTTOM_TEXT" description="MOD_GIANTCONTENT_FIELD_CUSTOM_BOTTOM_TEXT_DESC" />
+			<field name="custom_bottom_link" type="text" default="" label="MOD_GIANTCONTENT_FIELD_CUSTOM_BOTTOM_LINK" description="MOD_GIANTCONTENT_FIELD_CUSTOM_BOTTOM_LINK_DESC" />
+
+			<field type="caption" class="caption-primary" label="MOD_GIANTCONTENT_CAPTION_LINK_SETTINGS" />
+			<field name="title_link" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_TITLE_LINK" description="MOD_GIANTCONTENT_FIELD_TITLE_LINK_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="category_link" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_CATEGORY_LINK" description="MOD_GIANTCONTENT_FIELD_CATEGORY_LINK_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+
+			<field type="caption" class="caption-primary" label="MOD_GIANTCONTENT_CAPTION_DATE_SETTINGS" />
+			<field name="date_type" type="list" default="created" label="MOD_GIANTCONTENT_FIELD_DATE_TYPE" description="MOD_GIANTCONTENT_FIELD_DATE_TYPE_DESC">
+				<option value="created">MOD_GIANTCONTENT_OPTION_DATE_CREATED</option>
+				<option value="modified">MOD_GIANTCONTENT_OPTION_DATE_MODIFIED</option>
+				<option value="publish_up">MOD_GIANTCONTENT_OPTION_DATE_PUBLISHED</option>
+			</field>
+			<field name="date_format" type="text" default="d F Y" label="MOD_GIANTCONTENT_FIELD_DATE_FORMAT" description="MOD_GIANTCONTENT_FIELD_DATE_FORMAT_DESC" />
+
+			<field type="caption" class="caption-primary" label="MOD_GIANTCONTENT_CAPTION_IMAGE_SETTINGS" />
+			<field name="image_link" type="list" default="content" label="MOD_GIANTCONTENT_FIELD_IMAGE_LINK" description="MOD_GIANTCONTENT_FIELD_IMAGE_LINK_DESC">
+				<option value="none">MOD_GIANTCONTENT_OPTION_IMAGE_LINK_NONE</option>
+				<option value="content">MOD_GIANTCONTENT_OPTION_IMAGE_LINK_CONTENT</option>
+				<option value="shadowbox">MOD_GIANTCONTENT_OPTION_IMAGE_LINK_SHADOWBOX</option>
+			</field>
+			<field name="image_title" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_IMAGE_TITLE" description="MOD_GIANTCONTENT_FIELD_IMAGE_TITLE_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="image_source" type="list" default="auto" label="MOD_GIANTCONTENT_FIELD_IMAGE_SOURCE" description="MOD_GIANTCONTENT_FIELD_IMAGE_SOURCE_DESC">
+				<option value="auto">MOD_GIANTCONTENT_OPTION_IMAGE_SOURCE_AUTO</option>
+				<option value="media">MOD_GIANTCONTENT_OPTION_IMAGE_SOURCE_MEDIA</option>
+				<option value="content">MOD_GIANTCONTENT_OPTION_IMAGE_SOURCE_CONTENT</option>
+			</field>
+			<field name="image_resize" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_IMAGE_RESIZE" description="MOD_GIANTCONTENT_FIELD_IMAGE_RESIZE_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="image_width" type="text" default="200" label="MOD_GIANTCONTENT_FIELD_IMAGE_WIDTH" description="MOD_GIANTCONTENT_FIELD_IMAGE_WIDTH_DESC" />
+			<field name="image_height" type="text" default="100" label="MOD_GIANTCONTENT_FIELD_IMAGE_HEIGHT" description="MOD_GIANTCONTENT_FIELD_IMAGE_HEIGHT_DESC" />
+			<field name="image_quality" type="text" default="90" label="MOD_GIANTCONTENT_FIELD_IMAGE_QUALITY" description="MOD_GIANTCONTENT_FIELD_IMAGE_QUALITY_DESC" />
+			<field name="preloader" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_PRELOADER" description="MOD_GIANTCONTENT_FIELD_PRELOADER_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="preloader_fade" type="text" default="500" label="MOD_GIANTCONTENT_FIELD_PRELOADER_FADE" description="MOD_GIANTCONTENT_FIELD_PRELOADER_FADE_DESC" />
+			<field name="preloader_delay" type="text" default="500" label="MOD_GIANTCONTENT_FIELD_PRELOADER_DELAY" description="MOD_GIANTCONTENT_FIELD_PRELOADER_DELAY_DESC" />
+
+			<field type="caption" class="caption-primary" label="MOD_GIANTCONTENT_CAPTION_AVATAR_SETTINGS" />
+			<field name="show_avatar" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_SHOW_AVATAR" description="MOD_GIANTCONTENT_FIELD_SHOW_AVATAR_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="avatar_width" type="text" default="60" label="MOD_GIANTCONTENT_FIELD_AVATAR_WIDTH" description="MOD_GIANTCONTENT_FIELD_AVATAR_WIDTH_DESC" />
+			<field name="avatar_height" type="text" default="60" label="MOD_GIANTCONTENT_FIELD_AVATAR_HEIGHT" description="MOD_GIANTCONTENT_FIELD_AVATAR_HEIGHT_DESC" />
+			<field name="avatar_system" type="list" default="kunena" label="MOD_GIANTCONTENT_FIELD_AVATAR_SYSTEM" description="MOD_GIANTCONTENT_FIELD_AVATAR_SYSTEM_DESC">
+				<option value="k2">MOD_GIANTCONTENT_OPTION_AVATAR_SYSTEM_K2</option>
+				<option value="kunena">MOD_GIANTCONTENT_OPTION_AVATAR_SYSTEM_KUNENA</option>
+				<option value="jomsocial">MOD_GIANTCONTENT_OPTION_AVATAR_SYSTEM_JOMSOCIAL</option>
+				<option value="comprofiler">MOD_GIANTCONTENT_OPTION_AVATAR_SYSTEM_COMPROFILER</option>
+				<option value="easyblog">MOD_GIANTCONTENT_OPTION_AVATAR_SYSTEM_EASYBLOG</option>
+				<option value="easysocial">MOD_GIANTCONTENT_OPTION_AVATAR_SYSTEM_EASYSOCIAL</option>
+				<option value="easydiscuss">MOD_GIANTCONTENT_OPTION_AVATAR_SYSTEM_EASYDISCUSS</option>
+			</field>
+
+			<field type="caption" class="caption-primary" label="MOD_GIANTCONTENT_CAPTION_PROFILE_SETTINGS" />
+			<field name="show_profile" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_SHOW_PROFILE" description="MOD_GIANTCONTENT_FIELD_SHOW_PROFILE_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="profile_system" type="list" default="kunena" label="MOD_GIANTCONTENT_FIELD_PROFILE_SYSTEM" description="MOD_GIANTCONTENT_FIELD_PROFILE_SYSTEM_DESC">
+				<option value="k2">MOD_GIANTCONTENT_OPTION_PROFILE_SYSTEM_K2</option>
+				<option value="kunena">MOD_GIANTCONTENT_OPTION_PROFILE_SYSTEM_KUNENA</option>
+				<option value="jomsocial">MOD_GIANTCONTENT_OPTION_PROFILE_SYSTEM_JOMSOCIAL</option>
+				<option value="comprofiler">MOD_GIANTCONTENT_OPTION_PROFILE_SYSTEM_COMPROFILER</option>
+				<option value="easyblog">MOD_GIANTCONTENT_OPTION_PROFILE_SYSTEM_EASYBLOG</option>
+				<option value="easysocial">MOD_GIANTCONTENT_OPTION_PROFILE_SYSTEM_EASYSOCIAL</option>
+				<option value="easydiscuss">MOD_GIANTCONTENT_OPTION_PROFILE_SYSTEM_EASYDISCUSS</option>
+			</field>
+
+			<field type="caption" class="caption-primary" label="MOD_GIANTCONTENT_CAPTION_COMMENTS_SETTINGS" />
+			<field name="show_comments" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_SHOW_COMMENTS" description="MOD_GIANTCONTENT_FIELD_SHOW_COMMENTS_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="comments_system" type="list" default="komento" label="MOD_GIANTCONTENT_FIELD_COMMENTS_SYSTEM" description="MOD_GIANTCONTENT_FIELD_COMMENTS_SYSTEM_DESC">
+				<option value="default">MOD_GIANTCONTENT_OPTION_COMMENTS_SYSTEM_DEFAULT</option>
+				<option value="komento">MOD_GIANTCONTENT_OPTION_COMMENTS_SYSTEM_KOMENTO</option>
+				<option value="ccomment">MOD_GIANTCONTENT_OPTION_COMMENTS_SYSTEM_CCOMMENT</option>
+				<option value="jcomments">MOD_GIANTCONTENT_OPTION_COMMENTS_SYSTEM_JCOMMENTS</option>
+				<option value="jacomment">MOD_GIANTCONTENT_OPTION_COMMENTS_SYSTEM_JACOMMENT</option>
+			</field>
+
+			<field type="caption" class="caption-primary" label="MOD_GIANTCONTENT_CAPTION_ADDITIONAL_SETTINGS" />
+			<field name="shadowbox" type="radio" default="0" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_SHADOWBOX" description="MOD_GIANTCONTENT_FIELD_SHADOWBOX_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+			<field name="fontawesome" type="radio" default="1" class="btn-group btn-group-yesno" label="MOD_GIANTCONTENT_FIELD_FONTWAERSOME" description="MOD_GIANTCONTENT_FIELD_FONTWAERSOME_DESC">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+
+			<field type="caption" class="caption-primary" label="MOD_GIANTCONTENT_CAPTION_OTHER_MODULE_SETTINGS" />
+			<field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+				<option value="1">JGLOBAL_USE_GLOBAL</option>
+				<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+			</field>
+			<field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+
+			<field type="admin" />
+		</fieldset>
+	</fields>
+	</config>
+</extension>

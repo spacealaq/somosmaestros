@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_SOMOSMAESTROS_FORM_LBL_CATEGORIABLOG_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_SOMOSMAESTROS_FORM_LBL_CATEGORIABLOG_CREATED_BY"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CATEGORIABLOG_CREATED_BY"  /> 
+
+       <field name="categoria" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_CATEGORIABLOG_CATEGORIA"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CATEGORIABLOG_CATEGORIA" 
+                
+                
+                 required="true"  /> 
+
+       <field name="imagen" type="media"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_CATEGORIABLOG_IMAGEN"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CATEGORIABLOG_IMAGEN" 
+                
+                
+                 required="true" 
+            directory="/images/blog" /> 
+
+       <field name="icono" type="media"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_CATEGORIABLOG_ICONO"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CATEGORIABLOG_ICONO" 
+                
+                
+                 required="true" 
+            menu_published="0"
+            filter="raw"
+            directory="/images/blog"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="descripcion" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_CATEGORIABLOG_DESCRIPCION"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CATEGORIABLOG_DESCRIPCION" 
+                
+                
+                 required="true" 
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+        <option value="2">JARCHIVED</option>
+        <option value="-2">JTRASHED</option>
+    </field> 
+
+                        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+
+	</fieldset>
+
+</form>

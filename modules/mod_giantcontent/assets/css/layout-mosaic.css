@@ -1,0 +1,32 @@
+.giantcontent.layout-mosaic .gc-item {
+  border: 1px solid #ddd;
+  background: #fff;
+}
+.giantcontent.layout-mosaic .gc-title {
+  padding: 0 10px;
+  line-height: 40px;
+  border-bottom: 1px solid #ddd;
+}
+.giantcontent.layout-mosaic .gc-intro {
+  padding: 10px;
+}
+.giantcontent.layout-mosaic .gc-readmore {
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+  border-top: 1px solid #ddd;
+}
+.giantcontent.layout-mosaic .gc-readmore a {
+  display: block;
+}
+.giantcontent.layout-mosaic .gc-info-top,
+.giantcontent.layout-mosaic .gc-info-bottom {
+  padding: 0 10px;
+  line-height: 30px;
+}
+.giantcontent.layout-mosaic .gc-info-top {
+  border-bottom: 1px solid #ddd;
+}
+.giantcontent.layout-mosaic .gc-info-bottom {
+  border-top: 1px solid #ddd;
+}

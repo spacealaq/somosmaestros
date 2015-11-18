@@ -1,0 +1,99 @@
+.giantcontent.layout-roller .gc-info,
+.giantcontent.layout-roller .gc-title {
+  margin-bottom: 5px;
+}
+.giantcontent.layout-roller .gc-caption {
+  left: 0;
+  bottom: -100%;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+.giantcontent.layout-roller .active .gc-caption {
+  bottom: 0;
+}
+.giantcontent.layout-roller .gts-roller-outer {
+  position: relative;
+}
+.giantcontent.layout-roller .gts-roller-inner {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+.giantcontent.layout-roller .gts-roller-shuttle {
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+.giantcontent.layout-roller .gts-roller-item {
+  float: left;
+  position: relative;
+  vertical-align: middle;
+}
+.giantcontent.layout-roller .gts-roller-navigation .gts-roller-prev,
+.giantcontent.layout-roller .gts-roller-navigation .gts-roller-next {
+  top: 50%;
+  color: #fff;
+  width: 34px;
+  height: 34px;
+  border: 3px solid #fff;
+  z-index: 2;
+  opacity: .5;
+  position: absolute;
+  font-size: 20px;
+  background: #000;
+  margin-top: -20px;
+  text-align: center;
+  line-height: 34px;
+  border-radius: 100%;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+.giantcontent.layout-roller .gts-roller-navigation .gts-roller-prev:hover,
+.giantcontent.layout-roller .gts-roller-navigation .gts-roller-next:hover {
+  opacity: .8;
+}
+.giantcontent.layout-roller .gts-roller-navigation .gts-roller-prev:before,
+.giantcontent.layout-roller .gts-roller-navigation .gts-roller-next:before {
+  font-family: 'FontAwesome';
+}
+.giantcontent.layout-roller .gts-roller-navigation .gts-roller-prev {
+  left: 0;
+  margin-left: 20px;
+}
+.giantcontent.layout-roller .gts-roller-navigation .gts-roller-prev:before {
+  content: "\f053";
+}
+.giantcontent.layout-roller .gts-roller-navigation .gts-roller-next {
+  right: 0;
+  margin-right: 20px;
+}
+.giantcontent.layout-roller .gts-roller-navigation .gts-roller-next:before {
+  content: "\f054";
+}
+.giantcontent.layout-roller .gts-roller-pagination {
+  text-align: center;
+  line-height: 40px;
+}
+.giantcontent.layout-roller .gts-roller-pagination > a {
+  width: 12px;
+  height: 12px;
+  margin: 0 3px;
+  display: inline-block;
+  background: #999;
+  border-radius: 100%;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+.giantcontent.layout-roller .gts-roller-pagination > a.active {
+  cursor: default;
+  background: #333;
+}
+.giantcontent.layout-roller .gts-roller-pagination > a > span {
+  display: none;
+}

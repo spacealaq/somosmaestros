@@ -1,0 +1,76 @@
+.giantcontent.layout-tab .gc-item {
+  padding: 20px;
+}
+.giantcontent.layout-tab .gc-info {
+  margin: 20px 0 -20px;
+  line-height: 40px;
+  border-top: 1px solid #ddd;
+}
+.giantcontent.layout-tab .gc-image {
+  float: left;
+  margin-right: 20px;
+}
+.giantcontent.layout-tab .gc-title {
+  font-size: inherit;
+  font-weight: bold;
+}
+.giantcontent.layout-tab .gc-readmore {
+  float: right;
+  font-weight: bold;
+}
+.giantcontent.layout-tab .gts-tab {
+  display: block;
+  position: relative;
+}
+.giantcontent.layout-tab .gts-tab-items {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #ddd;
+}
+.giantcontent.layout-tab .gts-tab-item {
+  width: 100%;
+  display: block;
+  position: absolute;
+}
+.giantcontent.layout-tab .gts-tab-title {
+  z-index: 1;
+  display: inline-block;
+  position: relative;
+}
+.giantcontent.layout-tab .gts-tab-title > li {
+  float: left;
+}
+.giantcontent.layout-tab .gts-tab-title > li > a {
+  color: inherit;
+  display: block;
+  padding: 15px 20px;
+  margin-right: -1px;
+  margin-bottom: -6px;
+  border: 1px solid #ddd;
+  border-bottom: 0;
+}
+.giantcontent.layout-tab .gts-tab-title > li > a.active {
+  background: #fff;
+  border-bottom: 1px solid #fff;
+}
+@media (max-width: 767px) {
+  .giantcontent.layout-tab .gts-tab-title {
+    float: left;
+  }
+  .giantcontent.layout-tab .gts-tab-title > li {
+    float: none;
+  }
+  .giantcontent.layout-tab .gts-tab-title > li:last-child > a,
+  .giantcontent.layout-tab .gts-tab-title > li:last-child > a.active {
+    border-bottom: 1px solid #ddd;
+  }
+  .giantcontent.layout-tab .gts-tab-title > li > a {
+    margin-bottom: 0;
+  }
+  .giantcontent.layout-tab .gts-tab-title > li > a.active {
+    background: none;
+    border-right: 1px solid #fff;
+    border-bottom: 0;
+  }
+}

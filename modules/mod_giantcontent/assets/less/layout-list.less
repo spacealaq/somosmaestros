@@ -1,0 +1,41 @@
+.giantcontent.layout-list {
+	.gc-item { 
+		overflow: hidden;
+		position: relative;
+		margin-bottom: -1px;
+		border: 1px solid #ddd;
+	}
+	.gc-title {
+		cursor: pointer; 
+		padding: 10px;
+		display: block;
+		position: relative;
+		font-size: 110%;
+
+		&:before {
+			content: "\f067";
+			font-family: 'FontAwesome';
+			padding-right: 3px;
+		}
+	}
+	.active .gc-title {
+		border-bottom: 1px solid #ddd;
+
+		&:before {
+			content: "\f068";
+		}
+	}
+	.gc-content {
+		padding: 20px;
+	}
+	.active .gc-content { 
+		display: block;
+	}
+	.gc-info {
+		margin-bottom: 10px;
+	}
+	.gc-image {
+		float: left;
+		padding-right: 20px;
+	}
+}

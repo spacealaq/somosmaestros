@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_SOMOSMAESTROS_FORM_LBL_SMACTUALIZACION_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_SOMOSMAESTROS_FORM_LBL_SMACTUALIZACION_CREATED_BY"
+            description="COM_SOMOSMAESTROS_FORM_DESC_SMACTUALIZACION_CREATED_BY"  /> 
+
+       <field name="cedula" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_SMACTUALIZACION_CEDULA"
+            description="COM_SOMOSMAESTROS_FORM_DESC_SMACTUALIZACION_CEDULA" 
+                
+                
+                 required="true"  /> 
+
+       <field name="fecha" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_SMACTUALIZACION_FECHA"
+            description="COM_SOMOSMAESTROS_FORM_DESC_SMACTUALIZACION_FECHA" 
+                
+                
+                 required="true"  /> 
+
+       <field name="nombres" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_SMACTUALIZACION_NOMBRES"
+            description="COM_SOMOSMAESTROS_FORM_DESC_SMACTUALIZACION_NOMBRES" 
+                
+                
+                 required="true"  /> 
+
+       <field name="apellidos" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_SMACTUALIZACION_APELLIDOS"
+            description="COM_SOMOSMAESTROS_FORM_DESC_SMACTUALIZACION_APELLIDOS" 
+                
+                
+                 required="true"  /> 
+
+       <field name="telefono" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_SMACTUALIZACION_TELEFONO"
+            description="COM_SOMOSMAESTROS_FORM_DESC_SMACTUALIZACION_TELEFONO" 
+                
+                
+                 required="true"  /> 
+
+       <field name="correo" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_SMACTUALIZACION_CORREO"
+            description="COM_SOMOSMAESTROS_FORM_DESC_SMACTUALIZACION_CORREO" 
+                
+                
+                 required="true"  /> 
+
+       <field name="departamento" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_SMACTUALIZACION_DEPARTAMENTO"
+            description="COM_SOMOSMAESTROS_FORM_DESC_SMACTUALIZACION_DEPARTAMENTO" 
+                
+                
+                 required="true"  /> 
+
+       <field name="ciudad" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_SMACTUALIZACION_CIUDAD"
+            description="COM_SOMOSMAESTROS_FORM_DESC_SMACTUALIZACION_CIUDAD" 
+                
+                
+                 required="true"  /> 
+
+       <field name="genero" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_SMACTUALIZACION_GENERO"
+            description="COM_SOMOSMAESTROS_FORM_DESC_SMACTUALIZACION_GENERO" 
+                
+                
+                 required="true"  /> 
+
+       <field name="institucion" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_SMACTUALIZACION_INSTITUCION"
+            description="COM_SOMOSMAESTROS_FORM_DESC_SMACTUALIZACION_INSTITUCION" 
+                
+                
+                 required="true" 
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="observaciones" type="textarea"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_SMACTUALIZACION_OBSERVACIONES"
+            description="COM_SOMOSMAESTROS_FORM_DESC_SMACTUALIZACION_OBSERVACIONES" 
+                
+                
+                 required="true"  /> 
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+        <option value="2">JARCHIVED</option>
+        <option value="-2">JTRASHED</option>
+    </field> 
+
+                        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+
+	</fieldset>
+
+</form>

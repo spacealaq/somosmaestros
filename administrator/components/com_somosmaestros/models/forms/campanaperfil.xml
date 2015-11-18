@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_SOMOSMAESTROS_FORM_LBL_CAMPANAPERFIL_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_SOMOSMAESTROS_FORM_LBL_CAMPANAPERFIL_CREATED_BY"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CAMPANAPERFIL_CREATED_BY"  /> 
+
+       <field name="cedula" type="text" size="40" class="inputbox"
+                                                    
+            label="COM_SOMOSMAESTROS_FORM_LBL_CAMPANAPERFIL_CEDULA"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CAMPANAPERFIL_CEDULA" 
+                                                    
+                                                    
+                                                     required="true" 
+                                                    filter="safehtml" /> 
+
+       <field name="fecha" type="calendar" class="inputbox"
+         required="true" 
+        
+         default="0000-00-00 00:00:00" 
+        
+            label="COM_SOMOSMAESTROS_FORM_LBL_CAMPANAPERFIL_FECHA"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CAMPANAPERFIL_FECHA" 
+        format="%Y-%m-%d %H:%M:%S"
+        filter="safehtml" /> 
+
+       <field name="campana" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_CAMPANAPERFIL_CAMPANA"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CAMPANAPERFIL_CAMPANA" 
+                
+                
+                 required="true"  /> 
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+        <option value="2">JARCHIVED</option>
+        <option value="-2">JTRASHED</option>
+    </field> 
+
+                        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+
+	</fieldset>
+
+</form>

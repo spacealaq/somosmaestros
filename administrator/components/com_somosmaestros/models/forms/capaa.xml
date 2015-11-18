@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_SOMOSMAESTROS_FORM_LBL_CAPAA_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_SOMOSMAESTROS_FORM_LBL_CAPAA_CREATED_BY"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CAPAA_CREATED_BY"  /> 
+
+       <field name="tipo" type="list"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_CAPAA_TIPO"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CAPAA_TIPO" 
+                 default="0" 
+                
+                 required="true" 
+            menu_published="0"
+            filter="raw"
+            multiple="false"
+            option_on="Yes"
+            option_off="Yes">
+                <option value="1">Formación</option>
+                <option value="2">Blog</option>
+                <option value="3">Perfil</option>
+        </field> 
+
+ 
+		<field name="filter_tipo" type="list" onchange="this.form.submit();">
+			<option value="">COM_SOMOSMAESTROS_CAPAAS_TIPO_FILTER</option>
+			<option value="1">Formación</option>
+			<option value="2">Blog</option>
+			<option value="3">Perfil</option>
+		</field> 
+
+       <field name="fecha_inicio" type="calendar"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_CAPAA_FECHA_INICIO"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CAPAA_FECHA_INICIO" 
+                
+                
+                 /> 
+
+       <field name="fecha_fin" type="calendar"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_CAPAA_FECHA_FIN"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CAPAA_FECHA_FIN" 
+                
+                
+                 required="true"  /> 
+
+       <field name="delegacion" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_CAPAA_DELEGACION"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CAPAA_DELEGACION" 
+                
+                
+                 /> 
+
+       <field name="segmento" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_CAPAA_SEGMENTO"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CAPAA_SEGMENTO" 
+                
+                
+                
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="nivel" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_CAPAA_NIVEL"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CAPAA_NIVEL" 
+                
+                
+                 /> 
+
+       <field name="ciudad" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_CAPAA_CIUDAD"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CAPAA_CIUDAD" 
+                
+                
+                 /> 
+
+       <field name="area" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_CAPAA_AREA"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CAPAA_AREA" 
+                
+                
+                 /> 
+
+       <field name="proyecto" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_CAPAA_PROYECTO"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CAPAA_PROYECTO" 
+                
+                
+                 /> 
+
+       <field name="rol" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_CAPAA_ROL"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CAPAA_ROL" 
+                
+                
+                 /> 
+
+       <field name="publicacion" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_CAPAA_PUBLICACION"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CAPAA_PUBLICACION" 
+                
+                
+                 /> 
+
+       <field name="puntos" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_CAPAA_PUNTOS"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CAPAA_PUNTOS" 
+                
+                
+                 required="true"  /> 
+
+       <field name="meta" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_CAPAA_META"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CAPAA_META" 
+                
+                
+                 /> 
+
+       <field name="meta_reservas" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_CAPAA_META_RESERVAS"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CAPAA_META_RESERVAS" 
+                
+                
+                 /> 
+
+       <field name="tipo_institucion" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_CAPAA_TIPO_INSTITUCION"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CAPAA_TIPO_INSTITUCION" 
+                
+                
+                
+            menu_published="0"
+            filter="raw"
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="idtipopuntos" type="text" size="40" class="inputbox"
+                                                    
+            label="COM_SOMOSMAESTROS_FORM_LBL_CAPAA_IDTIPOPUNTOS"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CAPAA_IDTIPOPUNTOS" 
+                                                    
+                                                    
+                                                     required="true" 
+                                                    filter="safehtml" /> 
+
+       <field name="nombre" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_CAPAA_NOMBRE"
+            description="COM_SOMOSMAESTROS_FORM_DESC_CAPAA_NOMBRE" 
+                
+                
+                 required="true"  /> 
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+        <option value="2">JARCHIVED</option>
+        <option value="-2">JTRASHED</option>
+    </field> 
+
+                        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+
+	</fieldset>
+
+</form>

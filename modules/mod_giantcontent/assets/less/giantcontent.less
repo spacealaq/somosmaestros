@@ -1,0 +1,160 @@
+.gc-error {
+	color: #a94442;
+	border: 1px solid #ebccd1;
+	padding: 15px;
+	background: #f2dede;
+	border-radius: 4px;
+}
+.clearfix {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+/* GENERAL
+-------------------------------------------------- */
+.giantcontent {
+	a:hover,
+	a:focus {
+		outline: 0;
+		text-decoration: none;
+	}
+	ul,
+	li {
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		list-style: none;
+	}
+	img {
+		height: auto;
+		display: block;
+		max-width: 100%;
+	}
+	.gc-info,
+	.gc-info-top,
+	.gc-info-bottom {
+		color: #999;
+		font-size: 85%;
+	}
+	.gc-date,
+	.gc-hits,
+	.gc-author,
+	.gc-category,
+	.gc-comments {
+		padding-right: 5px;
+	}
+	.gc-date:before,
+	.gc-hits:before,
+	.gc-author:before,
+	.gc-category:before,
+	.gc-comments:before {
+		font-family: 'FontAwesome';
+	}
+	.gc-date:before {
+		content: "\f017";
+	}
+	.gc-hits:before {
+		content: "\f06e";
+	}
+	.gc-author:before {
+		content: "\f007";
+	}
+	.gc-category:before {
+		content: "\f07c";
+	}
+	.gc-comments:before {
+		content: "\f086";
+	}
+	.gc-title {
+		font-size: 125%;
+	}
+	.gc-tags {
+		margin: 20px 0;
+
+		.gc-tag {
+			color: #fff;
+			margin: 0 5px 0 0;
+			padding: 4px 6px;
+			background: #333;
+			border-radius: 2px;
+		}
+	}
+	.gc-featured {
+		color: #fff;
+		padding: 2px 4px;
+		font-size: 11px;
+		border-radius: 2px;
+		vertical-align: top;
+	}
+	.gc-rating {
+		.gc-rating-list {
+			width: 80px;
+			height: 16px;
+			display: inline-block;
+			overflow: hidden;
+			position: relative;
+			background: url(../images/star.png) 0 0 repeat-x;
+			margin-top: -4px;
+			vertical-align: middle;
+
+			.gc-rating-current {
+				top: 0;
+				left: 0;
+				height: 16px;
+				position: absolute;
+				background: url(../images/star.png) 0 -16px repeat-x;
+			}
+		}
+	}
+	.gc-caption {
+		color: #fff;
+		width: 100%;
+		position: absolute;
+		background: rgba(0, 0, 0, .8);
+
+		.gc-info,
+		.gc-info-top,
+		.gc-info-bottom {
+			color: #fff;
+		}
+	}
+	.gc-padding {
+		padding: 20px;
+	}
+	.gc-preloader {
+		display: block;
+		background: url(../images/loader.gif) no-repeat 50% 50% #fff;
+	}
+	.gc-top-text,
+	.gc-bottom-text {
+		line-height: 40px;
+		border-top: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
+	}
+	.gc-top-text {
+		font-size: 125%;
+		margin-bottom: 20px;
+	}
+	.gc-bottom-text {
+		margin-top: 20px;
+		text-align: right;
+	}
+}
+
+/* MEDIA QUERIES
+-------------------------------------------------- */
+@media (max-width: 767px) {
+	.giantcontent {
+		.gc-caption {
+			opacity: 0;
+			visibility: hidden
+		}
+	}
+}

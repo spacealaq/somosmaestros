@@ -1,0 +1,103 @@
+
+.giantcontent.layout-carousel .gc-title {
+  line-height: 40px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.giantcontent.layout-carousel .gc-intro {
+  padding: 10px 0;
+}
+.giantcontent.layout-carousel .gc-readmore {
+  float: right;
+  font-weight: bold;
+}
+.giantcontent.layout-carousel .gc-info-top,
+.giantcontent.layout-carousel .gc-info-bottom {
+  line-height: 30px;
+}
+.giantcontent.layout-carousel .gc-info-top {
+  border-bottom: 1px solid #ddd;
+}
+.giantcontent.layout-carousel .gc-info-bottom {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.giantcontent.layout-carousel .gts-carousel {
+  display: none;
+  position: relative;
+}
+.giantcontent.layout-carousel .gts-carousel .gts-carousel-inner {
+  display: none;
+  position: relative;
+}
+.giantcontent.layout-carousel .gts-carousel .gts-carousel-inner:after {
+  clear: both;
+  content: " ";
+  display: table;
+}
+.giantcontent.layout-carousel .gts-carousel .gts-carousel-outer {
+  overflow: hidden;
+  position: relative;
+}
+.giantcontent.layout-carousel .gts-carousel .gts-carousel-outer.autoHeight {
+  transition: height .5s ease-in-out;
+}
+.giantcontent.layout-carousel .gts-carousel .gts-carousel-item {
+  float: left;
+}
+.giantcontent.layout-carousel .gts-carousel .gts-carousel-controls {
+  height: 40px;
+  line-height: 40px;
+}
+.giantcontent.layout-carousel .gts-carousel .gts-carousel-controls .gts-carousel-pagination > div,
+.giantcontent.layout-carousel .gts-carousel .gts-carousel-controls .gts-carousel-navigation > div {
+  cursor: pointer;
+}
+.giantcontent.layout-carousel .gts-carousel .gts-carousel-navigation .gts-carousel-prev,
+.giantcontent.layout-carousel .gts-carousel .gts-carousel-navigation .gts-carousel-next {
+  color: #333;
+  bottom: 0;
+  position: absolute;
+  font-size: 24px;
+  background: #fff;
+  border-radius: 100%;
+  box-sizing: content-box;
+}
+.giantcontent.layout-carousel .gts-carousel .gts-carousel-navigation .gts-carousel-prev:before,
+.giantcontent.layout-carousel .gts-carousel .gts-carousel-navigation .gts-carousel-next:before {
+  font-family: 'FontAwesome';
+}
+.giantcontent.layout-carousel .gts-carousel .gts-carousel-navigation .gts-carousel-prev > span,
+.giantcontent.layout-carousel .gts-carousel .gts-carousel-navigation .gts-carousel-next > span {
+  display: none;
+}
+.giantcontent.layout-carousel .gts-carousel .gts-carousel-navigation .gts-carousel-prev {
+  left: 0;
+}
+.giantcontent.layout-carousel .gts-carousel .gts-carousel-navigation .gts-carousel-prev:before {
+  content: "\f0d9";
+}
+.giantcontent.layout-carousel .gts-carousel .gts-carousel-navigation .gts-carousel-next {
+  right: 0;
+}
+.giantcontent.layout-carousel .gts-carousel .gts-carousel-navigation .gts-carousel-next:before {
+  content: "\f0da";
+}
+.giantcontent.layout-carousel .gts-carousel .gts-carousel-pagination {
+  line-height: 40px;
+  text-align: center;
+}
+.giantcontent.layout-carousel .gts-carousel .gts-carousel-pagination .gts-carousel-pager {
+  width: 12px;
+  height: 12px;
+  margin: 0 3px;
+  display: inline-block;
+  background: #999;
+  transition: all 1s ease-in-out;
+  border-radius: 100%;
+  box-sizing: content-box;
+}
+.giantcontent.layout-carousel .gts-carousel .gts-carousel-pagination .gts-carousel-pager.active {
+  cursor: default;
+  background: #333;
+}

@@ -1,0 +1,86 @@
+.giantcontent.layout-accordion .gc-info {
+  margin-bottom: 5px;
+}
+.giantcontent.layout-accordion .gc-caption {
+  left: 0;
+  bottom: -100%;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+.giantcontent.layout-accordion .active .gc-caption {
+  bottom: 0;
+}
+.giantcontent.layout-accordion .gts-accordion {
+  overflow: hidden;
+  position: relative;
+}
+.giantcontent.layout-accordion .vertical .gts-accordion-spine {
+  float: left;
+  width: inherit;
+  height: 45px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  margin-top: -1px;
+}
+.giantcontent.layout-accordion .vertical .gts-accordion-spine.active {
+  cursor: default;
+}
+.giantcontent.layout-accordion .vertical li:first-child .gts-accordion-spine {
+  margin-top: 0;
+}
+.giantcontent.layout-accordion .vertical .gts-accordion-title {
+  left: 20px;
+  text-align: left;
+  line-height: 45px;
+  position: absolute;
+}
+.giantcontent.layout-accordion .vertical .gts-accordion-slide {
+  float: left;
+  width: 100%;
+  height: 0;
+  display: block;
+  overflow: hidden;
+}
+.giantcontent.layout-accordion .vertical .gts-accordion-content {
+  width: inherit;
+  position: relative;
+}
+.giantcontent.layout-accordion .horizontal .gts-accordion-spine {
+  float: left;
+  width: 50px;
+  height: inherit;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  margin-left: -1px;
+}
+.giantcontent.layout-accordion .horizontal .gts-accordion-spine.active {
+  cursor: default;
+}
+.giantcontent.layout-accordion .horizontal li:first-child .gts-accordion-spine {
+  margin-left: 0;
+}
+.giantcontent.layout-accordion .horizontal .gts-accordion-title {
+  top: 20px;
+  text-align: right;
+  line-height: 50px;
+  position: absolute;
+  -webkit-transform: translateX(-100%) rotate(-90deg);
+  transform: translateX(-100%) rotate(-90deg);
+  -webkit-transform-origin: right top;
+  transform-origin: right top;
+}
+.giantcontent.layout-accordion .horizontal .gts-accordion-slide {
+  float: left;
+  width: 0;
+  height: inherit;
+  display: block;
+  overflow: hidden;
+}
+.giantcontent.layout-accordion .horizontal .gts-accordion-content {
+  height: inherit;
+  position: relative;
+}

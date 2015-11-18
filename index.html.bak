@@ -1,0 +1,17 @@
+<html>
+<head>
+	<title>Bienvenidos a Somos Maestros</title>
+	<style type="text/css">
+	html{
+		margin: 0;
+		padding:0;
+		background: url("construccion.jpg") no-repeat fixed center center / cover transparent;
+		background-size: cover;
+	}
+
+	</style>
+</head>
+<body> 
+
+</body>
+</html>

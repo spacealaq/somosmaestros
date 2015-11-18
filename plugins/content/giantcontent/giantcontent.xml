@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="content" method="upgrade">
+	<name>Content - Giant Content</name>
+	<author>GiantTheme</author>
+	<creationDate>17 May 2014</creationDate>
+	<copyright>Copyright (C) 2014 GiantTheme. All rights reserved.</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>support@gianttheme.com</authorEmail>
+	<authorUrl>http://www.gianttheme.com</authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_CONTENT_GIANTCONTENT_XML_DESCRIPTION</description>
+
+	<files>
+		<filename plugin="giantcontent">giantcontent.php</filename>
+		<filename>index.html</filename>
+	</files>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_content_giantcontent.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_content_giantcontent.sys.ini</language>
+	</languages>
+</extension>

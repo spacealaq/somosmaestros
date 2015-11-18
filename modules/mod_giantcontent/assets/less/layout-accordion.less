@@ -1,0 +1,120 @@
+.giantcontent.layout-accordion {
+	.gc-info {
+		margin-bottom: 5px;
+	}
+	.gc-caption {
+		left: 0;
+		bottom: -100%;
+		-webkit-transition: all .5s ease-in-out;
+		transition: all .5s ease-in-out;
+	}
+	.active .gc-caption {
+		bottom: 0;
+	}
+}
+
+/* CORE ACCORDION
+-------------------------------------------------- */
+.giantcontent.layout-accordion {
+	.gts-accordion {
+		overflow: hidden;
+		position: relative;
+	}
+
+	// VERTICAL ACCORDION
+	.vertical {
+		// ACCORDION TITLE
+		.gts-accordion-spine {
+			float: left;
+			width: inherit;
+			height: 45px;
+			border: 1px solid #ddd;
+			cursor: pointer;
+			padding: 0;
+			position: relative;
+			margin-top: -1px;
+
+			&.active {
+				cursor: default;
+			}
+		}
+		li:first-child .gts-accordion-spine {
+			margin-top: 0;
+		}
+		.gts-accordion-title {
+			left: 20px;
+			text-align: left;
+			line-height: 45px;
+			position: absolute;
+		}
+		/*.gts-accordion-number {
+			right: 20px;
+			height: 45px;
+			position: absolute;
+			text-align: center;
+			line-height: 45px;
+		}*/
+		// ACCORDION SLIDE
+		.gts-accordion-slide {
+			float: left;
+			width: 100%;
+			height: 0;
+			display: block;
+			overflow: hidden;
+		}
+		.gts-accordion-content {
+			width: inherit;
+			position: relative;
+		}
+	}
+
+	// HORIZONTAL ACCORDION
+	.horizontal {
+		// ACCORDION TITLE
+		.gts-accordion-spine {
+			float: left;
+			width: 50px;
+			height: inherit;
+			border: 1px solid #ddd;
+			cursor: pointer;
+			padding: 0;
+			position: relative;
+			margin-left: -1px;
+
+			&.active {
+				cursor: default;
+			}
+		}
+		li:first-child .gts-accordion-spine {
+			margin-left: 0;
+		}
+		.gts-accordion-title {
+			top: 20px;
+			text-align: right;
+			line-height: 50px;
+			position: absolute;
+			-webkit-transform: translateX(-100%) rotate(-90deg);
+			transform: translateX(-100%) rotate(-90deg);
+			-webkit-transform-origin: right top;
+			transform-origin: right top;
+		}
+		/*.gts-accordion-number {
+			width: 50px;
+			bottom: 20px;
+			position: absolute;
+			text-align: center;
+		}*/
+		// ACCORDION SLIDE
+		.gts-accordion-slide {
+			float: left;
+			width: 0;
+			height: inherit;
+			display: block;
+			overflow: hidden;
+		}
+		.gts-accordion-content {
+			height: inherit;
+			position: relative;
+		}
+	}
+}

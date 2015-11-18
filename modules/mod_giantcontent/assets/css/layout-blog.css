@@ -1,0 +1,101 @@
+.giantcontent.layout-blog .gc-date,
+.giantcontent.layout-blog .gc-hits,
+.giantcontent.layout-blog .gc-author,
+.giantcontent.layout-blog .gc-category,
+.giantcontent.layout-blog .gc-comments {
+  padding: 0;
+}
+.giantcontent.layout-blog .gc-date:before,
+.giantcontent.layout-blog .gc-hits:before,
+.giantcontent.layout-blog .gc-author:before,
+.giantcontent.layout-blog .gc-category:before,
+.giantcontent.layout-blog .gc-comments:before {
+  content: none;
+}
+.giantcontent.layout-blog .gc-item {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+.giantcontent.layout-blog .gc-info,
+.giantcontent.layout-blog .gc-info-top,
+.giantcontent.layout-blog .gc-info-bottom {
+  font-size: inherit;
+}
+.giantcontent.layout-blog .gc-info {
+  margin-bottom: 10px;
+}
+.giantcontent.layout-blog .gc-info-top {
+  margin-top: 10px;
+}
+.giantcontent.layout-blog .gc-info-bottom {
+  margin-top: 10px;
+}
+.giantcontent.layout-blog .gc-title {
+  font-size: 150%;
+}
+.giantcontent.layout-blog .gc-image {
+  float: left;
+  border: 1px solid #ddd;
+  padding: 5px;
+  background: #fff;
+  margin-right: 20px;
+}
+.giantcontent.layout-blog .gc-intro {
+  margin-top: 10px;
+}
+.giantcontent.layout-blog .gc-avatar {
+  float: left;
+  margin-right: 20px;
+}
+.giantcontent.layout-blog .gc-readmore,
+.giantcontent.layout-blog .gc-comments {
+  float: right;
+}
+.giantcontent.layout-blog .gc-hits + .gc-rating:before {
+  color: #ccc;
+  content: '|';
+  padding: 0 5px;
+}
+.giantcontent.layout-blog .gc-readmore + .gc-comments:after {
+  color: #ccc;
+  content: '|';
+  padding: 0 10px 0 5px;
+}
+.giantcontent.layout-blog .gc-pagination.pager-top {
+  margin-bottom: 20px;
+}
+.giantcontent.layout-blog .gc-pagination.pager-left {
+  text-align: left;
+}
+.giantcontent.layout-blog .gc-pagination.pager-right {
+  text-align: right;
+}
+.giantcontent.layout-blog .gc-pagination.pager-center {
+  text-align: center;
+}
+.giantcontent.layout-blog .gc-pagination > a,
+.giantcontent.layout-blog .gc-pagination > span {
+  border: 1px solid #ddd;
+  display: inline-block;
+  padding: 6px 12px;
+  margin-left: -1px;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+.giantcontent.layout-blog .gc-pagination > a {
+  cursor: pointer;
+}
+.giantcontent.layout-blog .gc-pagination > span {
+  cursor: default;
+}
+.giantcontent.layout-blog .gc-pagination > .gts-pagination-current {
+  color: #fff;
+  cursor: default;
+  background: #333;
+  border-color: #333;
+}
+.giantcontent.layout-blog .gc-pagination > .gts-pagination-disabled {
+  color: inherit;
+  cursor: not-allowed;
+}

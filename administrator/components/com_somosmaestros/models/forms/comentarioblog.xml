@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_SOMOSMAESTROS_FORM_LBL_COMENTARIOBLOG_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_SOMOSMAESTROS_FORM_LBL_COMENTARIOBLOG_CREATED_BY"
+            description="COM_SOMOSMAESTROS_FORM_DESC_COMENTARIOBLOG_CREATED_BY"  /> 
+
+       <field name="comentario" type="textarea"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_COMENTARIOBLOG_COMENTARIO"
+            description="COM_SOMOSMAESTROS_FORM_DESC_COMENTARIOBLOG_COMENTARIO" 
+                
+                
+                
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="cedula" type="text" size="40" class="inputbox"
+                                                    
+            label="COM_SOMOSMAESTROS_FORM_LBL_COMENTARIOBLOG_CEDULA"
+            description="COM_SOMOSMAESTROS_FORM_DESC_COMENTARIOBLOG_CEDULA" 
+                                                    
+                                                    
+                                                    
+                                                    filter="safehtml" /> 
+
+ <field name="blog" type="foreignkey" class="inputbox"
+            label="COM_SOMOSMAESTROS_FORM_LBL_COMENTARIOBLOG_BLOG"
+            description="COM_SOMOSMAESTROS_FORM_DESC_COMENTARIOBLOG_BLOG" input_type="list" table="#__somosmaestros_blogs" key_field="id" value_field="titulo"  /> 
+
+       <field name="filter_blog" type="sql" class="inputbox"
+            onchange="this.form.submit();" translate="true"
+            query="SELECT 0 AS `id`, 'COM_SOMOSMAESTROS_COMENTARIOSBLOGS_BLOG_FILTER_DEFAULT_OPTION' AS `val` UNION SELECT `id`, `titulo` AS val FROM `#__somosmaestros_blogs`" key_field="id" value_field="val"
+             /> 
+
+       <field name="nombre" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_COMENTARIOBLOG_NOMBRE"
+            description="COM_SOMOSMAESTROS_FORM_DESC_COMENTARIOBLOG_NOMBRE" 
+                
+                
+                 required="true"  /> 
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+        <option value="2">JARCHIVED</option>
+        <option value="-2">JTRASHED</option>
+    </field> 
+
+                        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+
+	</fieldset>
+
+</form>

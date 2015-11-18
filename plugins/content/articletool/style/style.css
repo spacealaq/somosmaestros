@@ -1,0 +1,33 @@
+.article_tool_container{
+	overflow:hidden;
+}
+#article_tool_print, #article_tool_pdf{
+	text-decoration:none;
+	margin:0 2px;
+}
+#article_tool_print:hover, #article_tool_print:active, #article_tool_print:focus, #article_tool_pdf:hover, #article_tool_pdf:active, #article_tool_pdf:focus{
+	opacity:0.75;
+	filter:alpha(opacity=75);
+	background:transparent !important;
+}
+#article_tool_print .stButton img, #article_tool_pdf .stButton img{
+	height:16px;
+}
+.stButton{
+	float:left;
+}
+.chicklets_article_tool_print, .chicklets_article_tool_pdf{
+	display: block !important;
+    	margin: -16px 0 0 !important;
+    	padding: 0 3px 0 22px !important;
+}
+#article_tool_pdf .stButton, #article_tool_print .stButton{
+	margin-right:7px;
+}
+.stButton_pdf, .stButton_print{
+	margin:0 1px;
+}
+.article_tool_separator{
+	clear:left;
+	width:100%;
+}

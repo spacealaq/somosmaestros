@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="content">
+	<name>Article Tool</name>
+	<creationDate>22/04/2013</creationDate>
+	<license>GNU/GPL</license>
+	<version>1.0</version>
+	<author>Iacopo Guarneri</author>
+	<authorEmail>iacopo.guarneri@alice.it</authorEmail>
+	<authorUrl>http://www.the-html-tool.com/</authorUrl>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<files>
+		<filename plugin="articletool">articletool.php</filename>
+		<filename>index.html</filename>
+		<folder>dompdf</folder>
+		<folder>images</folder>
+		<folder>style</folder>
+	</files>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="general" group="general" label="General Settings">
+
+				<field name="cosa_mostrare" type="list" default="facebook" multiple="true" label="Show icons" description="">
+					<option value="stampa">Print</option>
+					<option value="scarica">Download</option>
+					<option value="email">E-Mail</option>
+					<option value="facebook">Facebook</option>
+					<option value="twitter">Twitter</option>
+					<option value="linkedin">LinkedIn</option>
+					<option value="pinterest">Pinterest</option>
+					<option value="instagram">Instagram</option>
+					<option value="googleplus">Google+</option>
+				</field>
+				
+				<field name="category" type="category" multiple="true" extension="com_content" label="See plugin in this categories" description="" default="2" />
+
+				<field name="icon_position" type="radio" default="left" label="Icon position" description="">
+					<option value="left">Left</option>
+					<option value="right">Right</option>
+				</field>
+				
+				<field name="show_in_blog" type="radio" default="0" label="Show in blog" description="">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+
+				<field name="counter" type="radio" default="0" label="Show counter" description="Shows to the left of the button a balloon containing the number of shares">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				
+				<field name="position" type="radio" default="top" label="Icon position" description="">
+					<option value="top">Top of the article</option>
+					<option value="bottom">Bottom of the article</option>
+				</field>
+				
+				<field name="visual_pdf" type="radio" default="0" label="View pdf" description="Displays the pdf in your browser or download it (available for the icon to download)">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				
+				<field name="css" type="textarea" default="color:#000;&#13;&#10;font-family:Arial;&#13;&#10;font-size:14px;&#13;&#10;line-height:19px;&#13;&#10;padding:20px;" label="Css" description="Sets the visual style for the document to download/print" rows="10" cols="30" />
+				
+				<field name="memory_limit" type="text" default="25" label="Memory limit (MB)" description="" />
+				
+			</fieldset>
+		</fields>
+	</config>
+</extension>

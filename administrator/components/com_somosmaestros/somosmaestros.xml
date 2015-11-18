@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_somosmaestros</name>
+    <creationDate>2015-08-04</creationDate>
+    <copyright>Copyright (C) 2015. Todos los derechos reservados.</copyright>
+    <license>Licencia Pública General GNU versión 2 o posterior. Consulte LICENSE.txt</license>
+    <author>Daniel Gustavo Álvarez Gaitán</author>
+    <authorEmail>info@danielalvarez.com.co</authorEmail>
+    <authorUrl>http://danielalvarez.com.co</authorUrl>
+    <version>1.0.0</version>
+    <description></description>
+    
+    <scriptfile>script.php</scriptfile>
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <files folder="site">
+        <filename>index.html</filename>
+        <filename>somosmaestros.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>views</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>assets</folder>
+    </files>
+    <languages folder="languages/site">
+        
+			<language tag="en-GB">en-GB/en-GB.com_somosmaestros.ini</language>
+    </languages>
+    <administration>
+        <menu img="components/com_somosmaestros/assets/images/s_com_somosmaestros.png" >COM_SOMOSMAESTROS</menu>
+        <submenu>
+            
+			<menu link="option=com_somosmaestros&amp;view=premios" view="premios" img="components/com_somosmaestros/assets/images/s_premios.png" alt="Somosmaestros/Premios">COM_SOMOSMAESTROS_TITLE_PREMIOS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=capaas" view="capaas" img="components/com_somosmaestros/assets/images/s_capaas.png" alt="Somosmaestros/Capaas">COM_SOMOSMAESTROS_TITLE_CAPAAS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=tipoinstitucioness" view="tipoinstitucioness" img="components/com_somosmaestros/assets/images/s_tipoinstitucioness.png" alt="Somosmaestros/Tipoinstitucioness">COM_SOMOSMAESTROS_TITLE_TIPOINSTITUCIONESS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=articulos" view="articulos" img="components/com_somosmaestros/assets/images/s_articulos.png" alt="Somosmaestros/Articulos">COM_SOMOSMAESTROS_TITLE_ARTICULOS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=categoriasarticulos" view="categoriasarticulos" img="components/com_somosmaestros/assets/images/s_categoriasarticulos.png" alt="Somosmaestros/Categoriasarticulos">COM_SOMOSMAESTROS_TITLE_CATEGORIASARTICULOS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=blogs" view="blogs" img="components/com_somosmaestros/assets/images/s_blogs.png" alt="Somosmaestros/Blogs">COM_SOMOSMAESTROS_TITLE_BLOGS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=categoriasblog" view="categoriasblog" img="components/com_somosmaestros/assets/images/s_categoriasblog.png" alt="Somosmaestros/Categoriasblog">COM_SOMOSMAESTROS_TITLE_CATEGORIASBLOG</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=agendas" view="agendas" img="components/com_somosmaestros/assets/images/s_agendas.png" alt="Somosmaestros/Agendas">COM_SOMOSMAESTROS_TITLE_AGENDAS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=categoriasagenda" view="categoriasagenda" img="components/com_somosmaestros/assets/images/s_categoriasagenda.png" alt="Somosmaestros/Categoriasagenda">COM_SOMOSMAESTROS_TITLE_CATEGORIASAGENDA</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=formacions" view="formacions" img="components/com_somosmaestros/assets/images/s_formacions.png" alt="Somosmaestros/Formacions">COM_SOMOSMAESTROS_TITLE_FORMACIONS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=sliderpublicos" view="sliderpublicos" img="components/com_somosmaestros/assets/images/s_sliderpublicos.png" alt="Somosmaestros/Sliderpublicos">COM_SOMOSMAESTROS_TITLE_SLIDERPUBLICOS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=slidersinternos" view="slidersinternos" img="components/com_somosmaestros/assets/images/s_slidersinternos.png" alt="Somosmaestros/Slidersinternos">COM_SOMOSMAESTROS_TITLE_SLIDERSINTERNOS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=asistentesagendas" view="asistentesagendas" img="components/com_somosmaestros/assets/images/s_asistentesagendas.png" alt="Somosmaestros/Asistentesagendas">COM_SOMOSMAESTROS_TITLE_ASISTENTESAGENDAS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=asistentesformacions" view="asistentesformacions" img="components/com_somosmaestros/assets/images/s_asistentesformacions.png" alt="Somosmaestros/Asistentesformacions">COM_SOMOSMAESTROS_TITLE_ASISTENTESFORMACIONS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=comentariosblogs" view="comentariosblogs" img="components/com_somosmaestros/assets/images/s_comentariosblogs.png" alt="Somosmaestros/Comentariosblogs">COM_SOMOSMAESTROS_TITLE_COMENTARIOSBLOGS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=videos" view="videos" img="components/com_somosmaestros/assets/images/s_videos.png" alt="Somosmaestros/Videos">COM_SOMOSMAESTROS_TITLE_VIDEOS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=smpersonas" view="smpersonas" img="components/com_somosmaestros/assets/images/s_smpersonas.png" alt="Somosmaestros/Smpersonas">COM_SOMOSMAESTROS_TITLE_SMPERSONAS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=smregistros" view="smregistros" img="components/com_somosmaestros/assets/images/s_smregistros.png" alt="Somosmaestros/Smregistros">COM_SOMOSMAESTROS_TITLE_SMREGISTROS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=smactualizaciones" view="smactualizaciones" img="components/com_somosmaestros/assets/images/s_smactualizaciones.png" alt="Somosmaestros/Smactualizaciones">COM_SOMOSMAESTROS_TITLE_SMACTUALIZACIONES</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=logs" view="logs" img="components/com_somosmaestros/assets/images/s_logs.png" alt="Somosmaestros/Logs">COM_SOMOSMAESTROS_TITLE_LOGS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=campanablogs" view="campanablogs" img="components/com_somosmaestros/assets/images/s_campanablogs.png" alt="Somosmaestros/Campanablogs">COM_SOMOSMAESTROS_TITLE_CAMPANABLOGS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=campanaperfils" view="campanaperfils" img="components/com_somosmaestros/assets/images/s_campanaperfils.png" alt="Somosmaestros/Campanaperfils">COM_SOMOSMAESTROS_TITLE_CAMPANAPERFILS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=smbrujulas" view="smbrujulas" img="components/com_somosmaestros/assets/images/s_smbrujulas.png" alt="Somosmaestros/Smbrujulas">COM_SOMOSMAESTROS_TITLE_SMBRUJULAS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=miperfils" view="miperfils" img="components/com_somosmaestros/assets/images/s_miperfils.png" alt="Somosmaestros/Miperfils">COM_SOMOSMAESTROS_TITLE_MIPERFILS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=recuperarcontrasenas" view="recuperarcontrasenas" img="components/com_somosmaestros/assets/images/s_recuperarcontrasenas.png" alt="Somosmaestros/Recuperarcontrasenas">COM_SOMOSMAESTROS_TITLE_RECUPERARCONTRASENAS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=registrars" view="registrars" img="components/com_somosmaestros/assets/images/s_registrars.png" alt="Somosmaestros/Registrars">COM_SOMOSMAESTROS_TITLE_REGISTRARS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=administradores" view="administradores" img="components/com_somosmaestros/assets/images/s_administradores.png" alt="Somosmaestros/Administradores">COM_SOMOSMAESTROS_TITLE_ADMINISTRADORES</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=crearcampaa" view="crearcampaa" img="components/com_somosmaestros/assets/images/s_crearcampaa.png" alt="Somosmaestros/Crearcampaa">COM_SOMOSMAESTROS_TITLE_CREARCAMPAA</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=creararticulos" view="creararticulos" img="components/com_somosmaestros/assets/images/s_creararticulos.png" alt="Somosmaestros/Creararticulos">COM_SOMOSMAESTROS_TITLE_CREARARTICULOS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=crearcategoriaarticulos" view="crearcategoriaarticulos" img="components/com_somosmaestros/assets/images/s_crearcategoriaarticulos.png" alt="Somosmaestros/Crearcategoriaarticulos">COM_SOMOSMAESTROS_TITLE_CREARCATEGORIAARTICULOS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=crearblogs" view="crearblogs" img="components/com_somosmaestros/assets/images/s_crearblogs.png" alt="Somosmaestros/Crearblogs">COM_SOMOSMAESTROS_TITLE_CREARBLOGS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=crearcategoriablogs" view="crearcategoriablogs" img="components/com_somosmaestros/assets/images/s_crearcategoriablogs.png" alt="Somosmaestros/Crearcategoriablogs">COM_SOMOSMAESTROS_TITLE_CREARCATEGORIABLOGS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=crearformacion" view="crearformacion" img="components/com_somosmaestros/assets/images/s_crearformacion.png" alt="Somosmaestros/Crearformacion">COM_SOMOSMAESTROS_TITLE_CREARFORMACION</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=crearagenda" view="crearagenda" img="components/com_somosmaestros/assets/images/s_crearagenda.png" alt="Somosmaestros/Crearagenda">COM_SOMOSMAESTROS_TITLE_CREARAGENDA</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=crearcategoriaagenda" view="crearcategoriaagenda" img="components/com_somosmaestros/assets/images/s_crearcategoriaagenda.png" alt="Somosmaestros/Crearcategoriaagenda">COM_SOMOSMAESTROS_TITLE_CREARCATEGORIAAGENDA</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=crearsliderpublico" view="crearsliderpublico" img="components/com_somosmaestros/assets/images/s_crearsliderpublico.png" alt="Somosmaestros/Crearsliderpublico">COM_SOMOSMAESTROS_TITLE_CREARSLIDERPUBLICO</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=crearsliderinterno" view="crearsliderinterno" img="components/com_somosmaestros/assets/images/s_crearsliderinterno.png" alt="Somosmaestros/Crearsliderinterno">COM_SOMOSMAESTROS_TITLE_CREARSLIDERINTERNO</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=crearpremios" view="crearpremios" img="components/com_somosmaestros/assets/images/s_crearpremios.png" alt="Somosmaestros/Crearpremios">COM_SOMOSMAESTROS_TITLE_CREARPREMIOS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=funcionarios" view="funcionarios" img="components/com_somosmaestros/assets/images/s_funcionarios.png" alt="Somosmaestros/Funcionarios">COM_SOMOSMAESTROS_TITLE_FUNCIONARIOS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=eventos" view="eventos" img="components/com_somosmaestros/assets/images/s_eventos.png" alt="Somosmaestros/Eventos">COM_SOMOSMAESTROS_TITLE_EVENTOS</menu>
+
+			<menu link="option=com_somosmaestros&amp;view=campanas" view="campanas" img="components/com_somosmaestros/assets/images/s_campanas.png" alt="Somosmaestros/Campanas">COM_SOMOSMAESTROS_TITLE_CAMPANAS</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>somosmaestros.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="languages/administrator">
+            
+			<language tag="en-GB">en-GB/en-GB.com_somosmaestros.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_somosmaestros.sys.ini</language>
+        </languages>
+    </administration>
+    <plugins>
+        <plugin group="search" plugin="somosmaestros"/>
+    </plugins>
+    
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->

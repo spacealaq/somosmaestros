@@ -1,0 +1,120 @@
+.giantcontent.layout-carousel {
+	.gc-item {
+		margin: 0 10px;
+	}
+	.gc-title {
+		line-height: 40px;
+		border-top: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
+	}
+	.gc-intro {
+		padding: 10px 0;
+	}
+	.gc-readmore {
+		float: right;
+		font-weight: bold;
+	}
+	.gc-info-top,
+	.gc-info-bottom {
+		line-height: 30px;
+	}
+	.gc-info-top {
+		border-bottom: 1px solid #ddd;
+	}
+	.gc-info-bottom {
+		border-top: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
+	}
+}
+
+/* CORE CAROUSEL
+-------------------------------------------------- */
+.giantcontent.layout-carousel .gts-carousel {
+	display: none;
+	position: relative;
+
+	.gts-carousel-inner {
+		display: none;
+		position: relative;
+
+		&:after {
+			clear: both;
+			content: " ";
+			display: table;
+		}
+	}
+	.gts-carousel-outer {
+		overflow: hidden;
+		position: relative;
+
+		&.autoHeight {
+			transition: height .5s ease-in-out;
+		}
+	}
+	.gts-carousel-item {
+		float: left;
+	}
+	.gts-carousel-controls {
+		height: 40px;
+		line-height: 40px;
+
+		.gts-carousel-pagination > div,
+		.gts-carousel-navigation > div {
+			cursor: pointer;
+		}
+	}
+
+	// CAROUSEL NAVIGATION
+	.gts-carousel-navigation {
+		.gts-carousel-prev,
+		.gts-carousel-next {
+			color: #333;
+			bottom: 0;
+			position: absolute;
+			font-size: 24px;
+			background: #fff;
+			border-radius: 100%;
+			box-sizing: content-box;
+
+			&:before {
+				font-family: 'FontAwesome';
+			}
+			> span {
+				display: none;
+			}
+		}
+		.gts-carousel-prev {
+			left: 0;
+		}
+		.gts-carousel-prev:before {
+			content: "\f0d9";
+		}
+		.gts-carousel-next {
+			right: 0;
+		}
+		.gts-carousel-next:before {
+			content: "\f0da";
+		}
+	}
+
+	// CAROUSEL PAGINATION
+	.gts-carousel-pagination {
+		line-height: 40px;
+		text-align: center;
+
+		.gts-carousel-pager {
+			width: 12px;
+			height: 12px;
+			margin: 0 3px;
+			display: inline-block;
+			background: #999;
+			transition: all 1s ease-in-out;
+			border-radius: 100%;
+			box-sizing: content-box;
+		}
+		.gts-carousel-pager.active {
+			cursor: default;
+			background: #333;
+		}
+	}
+}

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_SOMOSMAESTROS_FORM_LBL_PREMIO_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="created_by" type="createdby" default="" 
+            label="COM_SOMOSMAESTROS_FORM_LBL_PREMIO_CREATED_BY"
+            description="COM_SOMOSMAESTROS_FORM_DESC_PREMIO_CREATED_BY"  /> 
+
+       <field name="premio" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_PREMIO_PREMIO"
+            description="COM_SOMOSMAESTROS_FORM_DESC_PREMIO_PREMIO" 
+                
+                
+                 required="true"  /> 
+
+       <field name="descripcion" type="textarea"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_PREMIO_DESCRIPCION"
+            description="COM_SOMOSMAESTROS_FORM_DESC_PREMIO_DESCRIPCION" 
+                
+                
+                
+            option_on="Yes"
+            option_off="Yes" /> 
+
+       <field name="puntos" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_PREMIO_PUNTOS"
+            description="COM_SOMOSMAESTROS_FORM_DESC_PREMIO_PUNTOS" 
+                
+                
+                 required="true" 
+            filter="int" /> 
+
+       <field name="imagen" type="media"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_PREMIO_IMAGEN"
+            description="COM_SOMOSMAESTROS_FORM_DESC_PREMIO_IMAGEN" 
+                
+                
+                 required="true" 
+            directory="/images/premios" /> 
+
+       <field name="destacado" type="text" size="40" class="inputbox"
+                                                    
+            label="COM_SOMOSMAESTROS_FORM_LBL_PREMIO_DESTACADO"
+            description="COM_SOMOSMAESTROS_FORM_DESC_PREMIO_DESTACADO" 
+                                                    
+                                                     validate="boolean" 
+                                                     required="true" 
+                                                    filter="safehtml" /> 
+
+       <field name="cantidad" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_PREMIO_CANTIDAD"
+            description="COM_SOMOSMAESTROS_FORM_DESC_PREMIO_CANTIDAD" 
+                
+                
+                 required="true"  /> 
+
+       <field name="rol" type="text"
+                
+            label="COM_SOMOSMAESTROS_FORM_LBL_PREMIO_ROL"
+            description="COM_SOMOSMAESTROS_FORM_DESC_PREMIO_ROL" 
+                
+                
+                 required="true"  /> 
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+        <option value="2">JARCHIVED</option>
+        <option value="-2">JTRASHED</option>
+    </field> 
+
+                        <field name="checked_out" type="hidden" filter="unset" />
+        <field name="checked_out_time" type="hidden" filter="unset" />
+
+	</fieldset>
+
+</form>

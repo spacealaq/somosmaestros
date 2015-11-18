@@ -1,0 +1,41 @@
+.giantcontent.layout-newsticker .gc-item {
+  width: 100%;
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: -1px !important;
+}
+.giantcontent.layout-newsticker .gc-items {
+  width: 100%;
+}
+.giantcontent.layout-newsticker .gc-image {
+  float: left;
+  margin-right: 20px;
+}
+.giantcontent.layout-newsticker .gc-info,
+.giantcontent.layout-newsticker .gc-title {
+  margin-bottom: 10px;
+}
+.giantcontent.layout-newsticker .gc-controls {
+  float: right;
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+.giantcontent.layout-newsticker .control-up:before,
+.giantcontent.layout-newsticker .control-down:before,
+.giantcontent.layout-newsticker .control-toggle:before,
+.giantcontent.layout-newsticker .control-toggle.run:before {
+  font-family: "FontAwesome";
+}
+.giantcontent.layout-newsticker .control-up:before {
+  content: "\f053";
+}
+.giantcontent.layout-newsticker .control-down:before {
+  content: "\f054";
+}
+.giantcontent.layout-newsticker .control-toggle:before {
+  content: "\f04b";
+}
+.giantcontent.layout-newsticker .control-toggle.run:before {
+  content: "\f04c";
+}

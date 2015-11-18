@@ -1,0 +1,52 @@
+.gc-logo {
+	float: left;
+	width: 100px;
+	height: 100px;
+	margin: 0 20px 0 0;
+	display: inline-block;
+	background: url(../../assets/images/logo.png) no-repeat;
+}
+
+.giantcontent .container-main {
+	padding: 0 25px 100px;
+}
+.giantcontent .form-inline-header {
+	margin: 10px 0 20px;
+}
+.giantcontent .form-inline-header .control-label {
+	display: block;
+}
+.giantcontent .form-inline-header .control-label label {
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.giantcontent .gc-spacer {
+	color: #FFF;
+	margin: 0 0 20px;
+	padding: 10px;
+	background: #333;
+}
+.giantcontent .gc-spacer.spacer-error {
+	background: #D9534F;
+}
+.giantcontent .gc-spacer.spacer-primary {
+	background: #428BCA;
+}
+.giantcontent .gc-spacer.spacer-secondary {
+	background: #5CB85C;
+}
+.giantcontent .gc-spacer .control-label {
+	margin: 0;
+	padding: 0;
+}
+.giantcontent .gc-spacer .gc-caption .gc-name {
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.giantcontent .gc-spacer .gc-caption .gc-description {
+	color: #333;
+	margin: 5px 0 0;
+	padding: 5px 10px;
+	background: #FFF;
+}
